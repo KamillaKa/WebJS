@@ -1,7 +1,10 @@
 'use strict'
 
-const number = +prompt('Syötä luonnollinen luku');
+let number = +prompt('Syötä luonnollinen luku');
 
-for (let i = 0; i <= number ; i += i) {
-  console.log(i);
+let sum = 0
+
+for (let i = 0; i <= number ; i++) {
+  sum += i
 }
+document.getElementById('target').insertAdjacentHTML('beforeend', sum);
