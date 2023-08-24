@@ -4,22 +4,75 @@
   box-sizing: border-box;
 }
 
+body {
+  background-color: gainsboro;
+}
 
+nav {
+  display: block;
+  margin: auto;
+  width: 100%;
+  display: flex;
+  background-color: lightseagreen;
+  padding: 2em 1em;
+  border: 1px solid gold;
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+nav ul li {
+  list-style: none;
+  margin-left: 1.2em;
+}
+
+nav ul li a {
+  text-decoration: none;
+  padding: 0.5em 1em;
+  color: gold;
+  border-radius: 1em;
+  text-align: center;
+}
+
+nav ul li a:hover {
+  background: #ededed;
+  color: #343434;
+}
 
 .moreus {
-  width: 80%;;
-  margin: auto;
-  text-align: center;
-  background-color: aquamarine;
+  width: 70%;
+  background-color: lightblue;
+margin: 3em;
+padding: 3em;
+  left: 20%;
+  position: fixed;
+}
 
+h2 {
+  padding-left: 14em;
+}
+
+#anchor {
+  width: 10em;
+  position: absolute;
+  top: -50px;
+  right: -40px;
 }
 
 #harbor {
   width: 15em;
   float: left;
-  margin: 15px;
+  margin: 3em;
 }
 
 .moreusp {
-  float: right;
+  margin-top: 2em;
+}
+
+.wrappermoreus {
+  width: 70em;
+clear: both;
 }
