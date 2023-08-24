@@ -1,26 +1,16 @@
 'use strict';
 
-//const movies = [];
+const movies = [];
 
 let more = true;
-/*
+
 while (more) {
   const title = prompt('Syötä elokuvan nimi');
   const rating = prompt('Syötä elokuvan arvio (1-5)');
   const movie = {title, rating};
-
   movies.push(movie);
-
   more = confirm('Halutko syöttää enemmän?');
 }
-*/
-
-const movies = [
-  {title: 'Neverland', rating: '4'},
-  {title: 'Siamese', rating: '2'},
-  {title: 'Loch Ness', rating: '1'},
-  {title: 'Conductor', rating: '2'},
-];
 
 function sortMovies(a, b) {
   const difference = b.rating - a.rating;
