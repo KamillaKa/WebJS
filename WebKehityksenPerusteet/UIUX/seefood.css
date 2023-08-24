@@ -1,0 +1,25 @@
+* {
+  padding: o;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+
+
+.moreus {
+  width: 80%;;
+  margin: auto;
+  text-align: center;
+  background-color: aquamarine;
+
+}
+
+#harbor {
+  width: 15em;
+  float: left;
+  margin: 15px;
+}
+
+.moreusp {
+  float: right;
+}
