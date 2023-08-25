@@ -5,74 +5,92 @@
 }
 
 body {
-  background-color: gainsboro;
+  background-color: #B0E0E6 ;
 }
 
 nav {
-  display: block;
-  margin: auto;
-  width: 100%;
   display: flex;
-  background-color: lightseagreen;
-  padding: 2em 1em;
-  border: 1px solid gold;
+  justify-content: left;
+  background-color: #FFFFFF;
+  padding: 2em;
+  margin: 0 auto;
+  width: 70%;
 }
 
 nav ul {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  margin: 0;
+  padding: 0;
 }
 
 nav ul li {
   list-style: none;
-  margin-left: 1.2em;
+  margin-left: 0 1.2em;
 }
 
 nav ul li a {
   text-decoration: none;
   padding: 0.5em 1em;
-  color: gold;
-  border-radius: 1em;
-  text-align: center;
+  color: #003366;
 }
 
 nav ul li a:hover {
-  background: #ededed;
-  color: #343434;
+  background:  #F4ECE1;
+  color: #FF6F61;
 }
 
 .moreus {
   width: 70%;
-  background-color: lightblue;
-margin: 3em;
-padding: 3em;
-  left: 20%;
-  position: fixed;
+  background-color: #FFFFFF;
+  margin: 3em auto;
+  padding: 3em;
 }
 
 h2 {
-  padding-left: 14em;
+  text-align: left;
 }
 
 #anchor {
   width: 10em;
   position: absolute;
-  top: -50px;
-  right: -40px;
+  top: 70px;
+  right: 250px;
 }
 
 #harbor {
   width: 15em;
   float: left;
-  margin: 3em;
+  margin-right: 3em;
 }
 
+#moreush {
+  color: #003366;
+  font-family: Arial, sans-serif;
+  font-size: 18px;
+}
+
+#ourStory {
+  color:  #66CCCC;
+  font-family: Georgia, serif;
+  font-weight: bold;
+  font-size: 24px;
+  }
+
 .moreusp {
-  margin-top: 2em;
+  color: #003366;
+  margin: 1em;
 }
 
 .wrappermoreus {
-  width: 70em;
+  margin: 3em 0;
+  width: 90%;
 clear: both;
 }
+
+/*
+background-color: #B0E0E6
+text (deep blue): #003366
+little bit highlighted texts (seafoam): #66CCCC
+hover background (sandy beige): #F4ECE1
+highlight (coral): #FF6F61
+*/
