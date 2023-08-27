@@ -39,6 +39,11 @@ nav ul li a:hover {
   color: #FF6F61;
 }
 
+#name {
+  color: #66CCCC;
+  font-weight: bold;
+}
+
 .moreus {
   width: 70%;
   background-color: #FFFFFF;
