@@ -4,7 +4,7 @@ const numbers = [];
 let cont = true;
 while (cont) {
   const number = prompt('Syötä luku tai kirjoita stop lopettaaksesi');
-  if (number == 'stop') {
+  if (number === 'stop') {
     alert('Lopetit ohjelman');
     cont = false;
   }
