@@ -808,7 +808,21 @@ function success(pos) {
 
   console.log(restaurants);
 
-  //tulosta ravintolat HTML
-}
 
+   // Get a reference to the table element
+   for (const restaurant of restaurants) {
+
+    const td1 = document.createElement('td');
+    td1.innerText = restaurant.name;
+
+    const td2 = document.createElement('td');
+    td2.innerText = restaurant.address;
+
+    const tr = document.createElement('tr');
+    tr.append(td1);
+    tr.append(td2);
+
+    document.getElementById('target').append(tr);
+   }
+}
 navigator.geolocation.getCurrentPosition(success, error, options);
