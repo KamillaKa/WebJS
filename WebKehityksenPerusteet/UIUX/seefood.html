@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="seefood.css" type="text/css">
   <title>Seefood</title>
+  <script src="seefoodDialog.js" defer></script>
 </head>
 <body>
   <nav>
@@ -16,6 +17,20 @@
     </ul>
   </nav>
   <main>
+    <section id="space">
+      <dialog open>
+        <img src="https://native-dialog.surge.sh/location-service.svg" alt="Illustration of Location Services" />
+        <h2 id="dialog_title" class="h2">Use location services?</h2>
+        <p id="dialog_description">
+          In order to give directional instructions, we kindly ask you to turn
+          on the location services.
+        </p>
+        <div class="flex flex-space-between">
+          <button id="close_dialog">Close</button>
+          <button id="confirm_dialog" class="cta">Confirm</button>
+        </div>
+      </dialog>
+    </section>
     <section class="moreus">
       <h2 id="moreush">Lisää meistä</h2>
       <h2 id="ourStory">Tämä on tarinamme</h2>
