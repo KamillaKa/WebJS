@@ -18,18 +18,8 @@
   </nav>
   <main>
     <section id="space">
-      <dialog open>
-        <img src="https://native-dialog.surge.sh/location-service.svg" alt="Illustration of Location Services" />
-        <h2 id="dialog_title" class="h2">Use location services?</h2>
-        <p id="dialog_description">
-          In order to give directional instructions, we kindly ask you to turn
-          on the location services.
-        </p>
-        <div class="flex flex-space-between">
-          <button id="close_dialog">Close</button>
-          <button id="confirm_dialog" class="cta">Confirm</button>
-        </div>
-      </dialog>
+      <button id="open_dialog">Open dialog</button>
+
     </section>
     <section class="moreus">
       <h2 id="moreush">Lisää meistä</h2>
@@ -43,5 +33,19 @@
       </div>
     </section>
   </main>
+  <footer>
+  </footer>
+  <dialog id="diaFirst">
+    <img src="dialog1_sailingboats.jpg" alt="Three sailing boats sail the ocean" />
+    <h2 id="dialog_title" class="h2">Use location services?</h2>
+    <p id="dialog_description">
+      In order to give directional instructions, we kindly ask you to turn
+      on the location services.
+    </p>
+    <div class="flex flex-space-between">
+      <button id="close_dialog" class="diaBut">Close</button>
+      <button id="confirm_dialog" class="diaBut">Confirm</button>
+    </div>
+  </dialog>
 </body>
 </html>
