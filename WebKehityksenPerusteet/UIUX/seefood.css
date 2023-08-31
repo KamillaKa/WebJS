@@ -97,7 +97,7 @@ nav ul li a:hover {
 }
 
 h2 {
-  text-align: left;
+    text-align: left;
 }
 
 #moreush {
@@ -142,6 +142,13 @@ h2 {
 footer {
   background-color: var(--coral);
   padding: 2em;
+}
+
+#copyright {
+  margin: 0,5em 0;
+  text-align: center;
+  font-size: 15px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 /* valmiista dialogista */
 .diaBut {
