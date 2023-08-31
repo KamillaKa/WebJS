@@ -771,3 +771,44 @@ const restaurants = [
 ];
 
 // your code here
+
+
+  const table = document.querySelector("table");
+
+  restaurants.sort((a, b) => a.name.localeCompare(b.name)).forEach((restaurant) => {
+    const row = table.insertRow(-1);
+    const cell1 = row.insertCell(0);
+    const cell2 = row.insertCell(1);
+
+    cell1.textContent = restaurant.name;
+    cell2.textContent = restaurant.address;
+
+    row.addEventListener("click", () => {
+      document.querySelectorAll("tr").forEach(elem => elem.classList.remove("highlight"));
+      row.classList.add("highlight");
+      showModal(restaurant);
+    });
+  });
+
+  const modal = document.getElementById("modal");
+
+  function showModal(restaurant) {
+    for (const restaurant of restaurants) {
+    modal.innerHTML = `
+      Name: ${restaurant.name}<br>
+      Address: ${restaurant.address}<br>
+      Postal Code: ${restaurant.postalCode}<br>
+      City: ${restaurant.city}<br>
+      Phone: ${restaurant.phone}<br>
+      Company: ${restaurant.company}
+    `;
+    modal.showModal();
+    }
+  }
+
+  modal.addEventListener("click", event => {
+    if (event.target === modal) {
+      modal.close();
+    }
+  });
+});
