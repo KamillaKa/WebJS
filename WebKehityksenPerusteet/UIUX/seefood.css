@@ -68,8 +68,21 @@ nav ul li a:hover {
 }
 
 /* first section */
-#space {
-  height: 400px;
+
+#open_dialog {
+  display: block;
+  margin: 2em auto;
+  width: calc(44px * var(--ratio));
+  height: 44px;
+  border-radius: calc(3px * var(--ratio));
+  border: none;
+  letter-spacing: ccalc(3 * var(--leading, 0.025em));
+  font-family: inherit;
+  color: var(--white);
+  background-color: var(--seafoam);
+  font-size: large;
+  font-weight: 700;
+  box-shadow: var(--boxShadow);
 }
 
 /* moreus section */
@@ -80,6 +93,7 @@ nav ul li a:hover {
   padding: 3em;
   border-radius: 3px;
   box-shadow: var(--boxShadow);
+  position: relative;
 }
 
 h2 {
@@ -98,14 +112,13 @@ h2 {
   font-family: Georgia, serif;
   font-weight: bold;
   font-size: 24px;
-
   }
 
 #anchor {
   width: 10em;
   position: absolute;
-  top: 450px;
-  right: 250px;
+  top: -70px;
+  right: -20px;
 }
 
 .wrappermoreus {
@@ -126,6 +139,10 @@ h2 {
 }
 
 /* footer */
+footer {
+  background-color: var(--coral);
+  padding: 2em;
+}
 /* valmiista dialogista */
 .diaBut {
   display: block;
@@ -208,3 +225,23 @@ h2 {
 .flex button {
   margin: 8px auto;
 }
+
+.myForm {
+  margin: 30px;
+}
+.myForm input{
+  margin: 30px;
+  padding: 10px;
+}
+
+.myForm input:invalid {
+  background-color: var(--lightblue);
+}
+
+.myForm input:invalid {
+  background-color: var(--coral);
+}
+
+/* .myForm input:required {
+
+} */

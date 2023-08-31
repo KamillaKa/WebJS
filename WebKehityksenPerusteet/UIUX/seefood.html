@@ -42,6 +42,13 @@
       In order to give directional instructions, we kindly ask you to turn
       on the location services.
     </p>
+    <form class="myForm" method="get">
+      <label for="username">Enter your name (min 3 characters):</label>
+      <input type="text" name="username" autocomplete="name" id="nameField" placeholder="Name" minlength="3" required/>
+      <label for="pwd">Enter your password:</label>
+      <input type="password" name="password" id="pwd" placeholder="Password" required/>
+      <input type="submit" value="Send"
+    </form>
     <div class="flex flex-space-between">
       <button id="close_dialog" class="diaBut">Close</button>
       <button id="confirm_dialog" class="diaBut">Confirm</button>
