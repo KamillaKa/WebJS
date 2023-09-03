@@ -772,10 +772,11 @@ const restaurants = [
 
 // your code here
 
+const table = document.querySelector('table');
 
-  const table = document.querySelector("table");
-
-  restaurants.sort((a, b) => a.name.localeCompare(b.name)).forEach((restaurant) => {
+restaurants
+  .sort((a, b) => a.name.localeCompare(b.name))
+  .forEach(restaurant => {
     const row = table.insertRow(-1);
     const cell1 = row.insertCell(0);
     const cell2 = row.insertCell(1);
@@ -783,17 +784,19 @@ const restaurants = [
     cell1.textContent = restaurant.name;
     cell2.textContent = restaurant.address;
 
-    row.addEventListener("click", () => {
-      document.querySelectorAll("tr").forEach(elem => elem.classList.remove("highlight"));
-      row.classList.add("highlight");
+    row.addEventListener('click', () => {
+      document
+        .querySelectorAll('tr')
+        .forEach(elem => elem.classList.remove('highlight'));
+      row.classList.add('highlight');
       showModal(restaurant);
     });
   });
 
-  const modal = document.getElementById("modal");
+const modal = document.getElementById('modal');
 
-  function showModal(restaurant) {
-    for (const restaurant of restaurants) {
+function showModal(restaurant) {
+  for (const restaurant of restaurants) {
     modal.innerHTML = `
       Name: ${restaurant.name}<br>
       Address: ${restaurant.address}<br>
@@ -803,12 +806,11 @@ const restaurants = [
       Company: ${restaurant.company}
     `;
     modal.showModal();
-    }
   }
+}
 
-  modal.addEventListener("click", event => {
-    if (event.target === modal) {
-      modal.close();
-    }
-  });
+modal.addEventListener('click', event => {
+  if (event.target === modal) {
+    modal.close();
+  }
 });

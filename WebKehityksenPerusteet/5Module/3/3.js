@@ -4,7 +4,7 @@ async function fetchData(method, url) {
   try {
     const options = {
       method,
-      headers: { 'Content-Type': 'application/json' },
+      headers: {'Content-Type': 'application/json'},
     };
 
     const response = await fetch(url, options);
@@ -22,6 +22,12 @@ async function fetchData(method, url) {
 
 // Test the functions with non-existent URLs
 fetchData('GET', 'https://reqres.in/api/unknown/23');
-fetchData('POST', 'https://reqres.in/api/unknown', { name: 'John', job: 'developer' });
-fetchData('PUT', 'https://reqres.in/api/unknown/23', { name: 'Jane', job: 'manager' });
+fetchData('POST', 'https://reqres.in/api/unknown', {
+  name: 'John',
+  job: 'developer',
+});
+fetchData('PUT', 'https://reqres.in/api/unknown/23', {
+  name: 'Jane',
+  job: 'manager',
+});
 fetchData('DELETE', 'https://reqres.in/api/unknown/23');
