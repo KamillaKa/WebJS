@@ -1,4 +1,5 @@
-'use strict';
+import {restaurantRow} from './components';
+
 const modal = document.querySelector('dialog');
 modal.addEventListener('click', () => {
   modal.close();
@@ -48,13 +49,7 @@ const success = async pos => {
     });
 
     for (const restaurant of restaurants) {
-      const tr = document.createElement('tr');
-      const name = document.createElement('td');
-      name.innerText = restaurant.name;
-      const address = document.createElement('td');
-      address.innerText = restaurant.address;
-      tr.appendChild(name);
-      tr.appendChild(address);
+      const tr = restaurantRow(restaurant);
       document.querySelector('table').appendChild(tr);
       tr.addEventListener('click', async () => {
         try {
