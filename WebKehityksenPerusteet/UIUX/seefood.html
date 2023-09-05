@@ -47,7 +47,7 @@
       <label for="username">Enter your name (min 3 characters):</label>
       <input type="text" name="username" autocomplete="name" id="nameField" placeholder="Name" minlength="3" required/>
       <label for="pwd">Enter your password:</label>
-      <input type="password" name="password" id="pwd" placeholder="Password" required/>
+      <input type="password" name="password" id="pwd" placeholder="Password" required pattern="^(?=.[A-Z])(?=.\d).*$"/>
       <input type="submit" value="Send"
     </form>
     <div class="flex flex-space-between">

@@ -241,7 +241,7 @@ footer {
   padding: 10px;
 }
 
-.myForm input:invalid {
+.myForm input:valid {
   background-color: var(--lightblue);
 }
 
