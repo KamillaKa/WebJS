@@ -1,6 +1,6 @@
 'use strict';
 const modal = document.querySelector('dialog');
-modal.addEventListener('click', function () {
+modal.addEventListener('click', () => {
   modal.close();
 });
 
@@ -11,30 +11,31 @@ const positionOptions = {
   maximumAge: 0,
 };
 
-async function fetchData(url, options = {}) {
+const fetchData = async (url, options = {}) => {
   const response = await fetch(url, options);
   if (!response.ok) {
     throw new Error(`Error ${response.status} occured`);
   }
   const json = response.json();
   return json;
-}
+};
 
-function calculateDistance(x1, y1, x2, y2) {
+const calculateDistance = (x1, y1, x2, y2) => {
   const distance = Math.sqrt((x2 - x1) ** 2 + (y2 - y1) ** 2);
   return distance;
-}
+  // Math.sqrt ((x2 - x1) ** 2 + (y2 - y1) ** 2);
+};
 
-function error(err) {
+const error = err => {
   console.warn(`ERROR(${err.code}): ${err.message}`);
-}
+};
 
-async function success(pos) {
+const success = async pos => {
   try {
     const crd = pos.coords;
     const restaurants = await fetchData(apiUrl + '/restaurants');
     console.log(restaurants);
-    restaurants.sort(function (a, b) {
+    restaurants.sort((a, b) => {
       const x1 = crd.latitude;
       const y1 = crd.longitude;
       const x2a = a.location.coordinates[1];
@@ -55,7 +56,7 @@ async function success(pos) {
       tr.appendChild(name);
       tr.appendChild(address);
       document.querySelector('table').appendChild(tr);
-      tr.addEventListener('click', async function () {
+      tr.addEventListener('click', async () => {
         try {
           // remove all highlights
           const allHighs = document.querySelectorAll('.highlight');
@@ -88,8 +89,8 @@ async function success(pos) {
             menuHtml += `
         <tr>
           <td>${course.name}</td>
-          <td>${course.diets || ' - '}</td>
-          <td>${course.price || ' - '}</td>
+          <td>${course.diets ?? ' - '}</td>
+          <td>${course.price ?? ' - '}</td>
         </tr>
         `;
           }
@@ -104,6 +105,6 @@ async function success(pos) {
   } catch (error) {
     alert(error.message);
   }
-}
+};
 
 navigator.geolocation.getCurrentPosition(success, error, positionOptions);
