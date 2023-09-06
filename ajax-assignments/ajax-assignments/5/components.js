@@ -1,4 +1,4 @@
-const restaurantRow = restaurant => {
+const restaurantRow = (restaurant) => {
   const {name, address, company} = restaurant;
   const tr = document.createElement('tr');
   const nameCell = document.createElement('td');
@@ -14,18 +14,18 @@ const restaurantRow = restaurant => {
 };
 
 const restaurantModal = (restaurant, menu) => {
-  const {name, address, city, postalCode, phone} = restaurant;
-  let html = `<h3>${.name}</h3>
-      <p>${company}</p>
-      <p>${address} ${postalCode} ${city}</p>
-      <p>${phone}</p>
-      <table>
-        <tr>
-          <th>Course</th>
-          <th>Diet</th>
-          <th>Price</th>
-        </tr>
-      `;
+  const {name, address, city, postalCode, phone, company} = restaurant;
+  let html = `<h3>${name}</h3>
+  <p>${company}</p>
+  <p>${address} ${postalCode} ${city}</p>
+  <p>${phone}</p>
+  <table>
+    <tr>
+      <th>Course</th>
+      <th>Diet</th>
+      <th>Price</th>
+    </tr>
+  `;
   menu.courses.forEach((course) => {
     const {name, diets, price} = course;
     html += `
@@ -40,11 +40,11 @@ const restaurantModal = (restaurant, menu) => {
   return html;
 };
 
-const errorModal = () => {
+const errorModal = (message) => {
   const html = `
-  <h3>Error</h3>
-  <p>${message}</p>
-  `;
+      <h3>Error</h3>
+      <p>${message}</p>
+      `;
   return html;
 };
 
