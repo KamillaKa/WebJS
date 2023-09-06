@@ -10,7 +10,7 @@
   --seafoam: #66CCCC; /* little bit highlighted texts */
   --sandyBeige: #F4ECE1; /* hover background */
   --coral: #FF6F61; /* hihlight */
-  --white: #FFFFFF;
+  --white: rgb(255, 255, 255);
   --boxShadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
   /* valmiista dialogista */
   --ratio: 3.74;
@@ -93,7 +93,9 @@ nav ul li a:hover {
 /* moreus section */
 .moreus {
   width: 70%;
+  background-image: url(pics/moreus_wallpaper2.jpg);
   background-color: var(--white);
+  background-position: center;
   margin: 3em auto;
   padding: 3em;
   border-radius: 3px;
@@ -110,6 +112,7 @@ h2 {
   font-family: Arial, sans-serif;
   font-size: 18px;
   font-style: italic;
+  padding-top: 1em;
 }
 
 #ourStory {
@@ -117,6 +120,7 @@ h2 {
   font-family: Georgia, serif;
   font-weight: bold;
   font-size: 24px;
+  padding: 0.5em 0 1em 0;
   }
 
 #anchor {
@@ -127,14 +131,15 @@ h2 {
 }
 
 .wrappermoreus {
-  margin: 3em 0;
   clear: both;
+  background-color: rgba(var(--white), 0.85);
+  padding: 2em;
 }
 
 #harbor {
   width: 15em;
   float: left;
-  margin-right: 3em;
+  margin-right: 2em;
   margin-bottom: 2em;
 }
 
@@ -146,7 +151,17 @@ h2 {
 /* footer */
 footer {
   background-color: var(--coral);
+  display: block;
+  height: 5em;
+  width: 70%;
   padding: 2em;
+  position: absolute;
+  bottom: 0;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  text-align: center;
 }
 
 #copyright {
@@ -196,18 +211,14 @@ footer {
   line-height: 1.625;
 }
 
-/* .flex {
+.flex {
   display: flex;
-  flex-wrap: wrap;
+
 }
 
-.flex.flex-space-between {
-  justify-content: space-between;
+.flex.diaBtn {
+  margin: 5px;
 }
-
-.flex button {
-  margin: 8px auto;
-} */
 
 .myForm {
   margin: 30px;
