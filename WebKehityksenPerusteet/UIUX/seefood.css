@@ -69,7 +69,7 @@ nav ul li a:hover {
 
 /* first section */
 
-#open_dialog {
+.diaBtn, #submitBtn {
   display: block;
   margin: 2em auto;
   width: calc(44px * var(--ratio));
@@ -84,6 +84,11 @@ nav ul li a:hover {
   font-weight: 700;
   box-shadow: var(--boxShadow);
 }
+
+.diaBtn:hover {
+  cursor: pointer;
+}
+
 
 /* moreus section */
 .moreus {
@@ -151,43 +156,13 @@ footer {
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 /* valmiista dialogista */
-.diaBut {
-  display: block;
-  margin-top: 2rem;
-  width: calc(44px * var(--ratio));
-  height: 44px;
-  border-radius: calc(3px * var(--ratio));
-  border: none;
-  letter-spacing: ccalc(3 * var(--leading, 0.025em));
-  font-family: inherit;
-  color: var(--grey-color);
-  background-color: var(--lightblue);
-  font-size: large;
-  font-weight: 700;
-}
 
-.diaBut:focus {
+/* diaBtn style is under first section */
+
+.diaBtn:focus {
   outline: none;
   border: 0.0625rem solid transparent;
   box-shadow: 0 0 0 0.125rem #fff, 0 0 0 0.2rem var(----dark-color-bg);
-}
-
-#confirm_dialog {
-  background-color: var(--lightblue);
-  color: var(--deepblue);
-}
-
-#close_dialog {
-  background-color: var(--coral);
-  color: var(--white);
-}
-
-#confirm_dialog:focus, #close_dialog:focus {
-  box-shadow: 0 0 0 0.125rem #fff, 0 0 0 0.2rem var(--dark-color-bg);
-}
-
-#open_dialog {
-
 }
 
 #diaFirst {
@@ -215,12 +190,12 @@ footer {
 }
 
 #dialog_description {
-  color: var(--grey-color);
+  color: var(--seafoam);
   letter-spacing: var(--leading, 0.025em);
   line-height: 1.625;
 }
 
-.flex {
+/* .flex {
   display: flex;
   flex-wrap: wrap;
 }
@@ -231,22 +206,46 @@ footer {
 
 .flex button {
   margin: 8px auto;
-}
+} */
 
 .myForm {
   margin: 30px;
+  color: var(--deepblue);
 }
 .myForm input{
-  margin: 30px;
+  margin: 15px 40px 30px 40px;
   padding: 10px;
+  background-color: var(--white);
+  transition: border-color 1s;
+  border: 1px solid var(--deepblue);
+  border-left: 10px solid var(--deepblue);
+  border-radius: 5px;
 }
 
 .myForm input:valid {
-  background-color: var(--lightblue);
+  border-left-color: var(--seafoam);
 }
 
 .myForm input:invalid {
+  border-left-color: var(--coral);
+}
+
+.myForm input:focus {
+  background-color: var(--sandyBeige);
+}
+
+#submitBtn {
+  background-color: var(--lightblue);
+  color: var(--deepblue);
+}
+
+#close_dialog {
   background-color: var(--coral);
+  color: var(--white);
+}
+
+#submitBtn:focus, #close_dialog:focus {
+  box-shadow: 0 0 0 0.125rem #fff, 0 0 0 0.2rem var(--dark-color-bg);
 }
 
 /* .myForm input:required {

@@ -18,7 +18,7 @@
   </nav>
   <main>
     <section id="space">
-      <button id="open_dialog">Open dialog</button>
+      <button id="open_dialog" class="diaBtn">Open dialog</button>
 
     </section>
     <section class="moreus">
@@ -46,14 +46,16 @@
     <form class="myForm" method="get">
       <label for="username">Enter your name (min 3 characters):</label>
       <input type="text" name="username" autocomplete="name" id="nameField" placeholder="Name" minlength="3" required/>
+      <label for="mail">Enter your email (@metropolia.fi):</label>
+      <input type="email" name="mail" id="mail" placeholder="email@metropolia.fi" required pattern=".+@metropolia.fi">
       <label for="pwd">Enter your password:</label>
-      <input type="password" name="password" id="pwd" placeholder="Password" required pattern="^(?=.[A-Z])(?=.\d).*$"/>
-      <input type="submit" value="Send"
+      <input type="password" name="pwd" id="passField" placeholder="Password" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"/>
+      <input type="submit" value="Send" id="submitBtn" class="diaBtn">
+      <div class="flex flex-space-between">
+        <button id="close_dialog" class="diaBtn">Close</button>
+      </div>
     </form>
-    <div class="flex flex-space-between">
-      <button id="close_dialog" class="diaBut">Close</button>
-      <button id="confirm_dialog" class="diaBut">Confirm</button>
-    </div>
+
   </dialog>
 </body>
 </html>
