@@ -15,10 +15,29 @@ const restaurantRow = restaurant => {
 
 const restaurantModal = (restaurant, menu) => {
   const {name, address, city, postalCode, phone} = restaurant;
-
+  let html = `<h3>${.name}</h3>
+      <p>${company}</p>
+      <p>${address} ${postalCode} ${city}</p>
+      <p>${phone}</p>
+      <table>
+        <tr>
+          <th>Course</th>
+          <th>Diet</th>
+          <th>Price</th>
+        </tr>
+      `;
   for (const course of menu.courses) {
     const {name, diets, price} = course;
+    html += `
+        <tr>
+          <td>${name}</td>
+          <td>${diets ?? ' - '}</td>
+          <td>${price ?? ' - '}</td>
+        </tr>
+        `;
   }
+  html += '</table>';
+  return html;
 };
 
-export {restaurantRow};
+export {restaurantRow, restaurantModal};

@@ -1,25 +1,11 @@
-import {restaurantRow} from './components';
+import {restaurantModal, restaurantRow} from './components';
+import {fetchData} from './functions';
+import {apiUrl, positionOptions} from './variables';
 
 const modal = document.querySelector('dialog');
 modal.addEventListener('click', () => {
   modal.close();
 });
-
-const apiUrl = 'https://sodexo-webscrape-r73sdlmfxa-lz.a.run.app/api/v1';
-const positionOptions = {
-  enableHighAccuracy: true,
-  timeout: 5000,
-  maximumAge: 0,
-};
-
-const fetchData = async (url, options = {}) => {
-  const response = await fetch(url, options);
-  if (!response.ok) {
-    throw new Error(`Error ${response.status} occured`);
-  }
-  const json = response.json();
-  return json;
-};
 
 const calculateDistance = (x1, y1, x2, y2) => {
   const distance = Math.sqrt((x2 - x1) ** 2 + (y2 - y1) ** 2);
@@ -62,35 +48,16 @@ const success = async pos => {
           tr.classList.add('highlight');
           // add restaurant data to modal
           modal.innerHTML = '';
-          const html = `<h3>${restaurant.name}</h3>
-      <p>${restaurant.company}</p>
-      <p>${restaurant.address} ${restaurant.postalCode} ${restaurant.city}</p>
-      <p>${restaurant.phone}</p>`;
-          modal.insertAdjacentHTML('beforeend', html);
+
           // fetch menu
           const menu = await fetchData(
             apiUrl + `/restaurants/daily/${restaurant._id}/fi`
           );
           console.log(menu);
-          let menuHtml = `
-      <table>
-        <tr>
-          <th>Course</th>
-          <th>Diet</th>
-          <th>Price</th>
-        </tr>
-      `;
-          for (const course of menu.courses) {
-            menuHtml += `
-        <tr>
-          <td>${course.name}</td>
-          <td>${course.diets ?? ' - '}</td>
-          <td>${course.price ?? ' - '}</td>
-        </tr>
-        `;
-          }
-          menuHtml += '</table>';
+
+          const menuHtml = restaurantModal(restaurant, menu);
           modal.insertAdjacentHTML('beforeend', menuHtml);
+
           modal.showModal();
         } catch (error) {
           alert(error.message);
