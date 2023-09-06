@@ -1,4 +1,4 @@
-import {restaurantModal, restaurantRow} from './components';
+import {errorModal, restaurantModal, restaurantRow} from './components';
 import {fetchData} from './functions';
 import {apiUrl, positionOptions} from './variables';
 
@@ -11,6 +11,40 @@ const calculateDistance = (x1, y1, x2, y2) => {
   const distance = Math.sqrt((x2 - x1) ** 2 + (y2 - y1) ** 2);
   return distance;
   // Math.sqrt ((x2 - x1) ** 2 + (y2 - y1) ** 2);
+};
+
+const createTable = restaurants => {
+  document.querySelector('table').innerHTML = '';
+  restaurants.forEach(restaurant => {
+    const tr = restaurantRow(restaurant);
+    document.querySelector('table').appendChild(tr);
+    tr.addEventListener('click', async () => {
+      try {
+        // remove all highlights
+        const allHighs = document.querySelectorAll('.highlight');
+        allHighs.forEach(high => {
+          high.classList.remove('highlight');
+        });
+        // add highlight
+        tr.classList.add('highlight');
+        // add restaurant data to modal
+        modal.innerHTML = '';
+
+        // fetch menu
+        const menu = await fetchData(
+          apiUrl + `/restaurants/daily/${restaurant._id}/fi`
+        );
+        console.log(menu);
+
+        const menuHtml = restaurantModal(restaurant, menu);
+        modal.insertAdjacentHTML('beforeend', menuHtml);
+
+        modal.showModal();
+      } catch (error) {
+        alert(error.message);
+      }
+    });
+  });
 };
 
 const error = err => {
@@ -33,39 +67,33 @@ const success = async pos => {
       const distanceB = calculateDistance(x1, y1, x2b, y2b);
       return distanceA - distanceB;
     });
+    createTable(restaurants);
+    const sodexoBtn = document.querySelector('#sodexo');
+    const compassBtn = document.querySelector('#compass');
+    const resetBtn = document.querySelector('#reset');
 
-    for (const restaurant of restaurants) {
-      const tr = restaurantRow(restaurant);
-      document.querySelector('table').appendChild(tr);
-      tr.addEventListener('click', async () => {
-        try {
-          // remove all highlights
-          const allHighs = document.querySelectorAll('.highlight');
-          for (const high of allHighs) {
-            high.classList.remove('highlight');
-          }
-          // add highlight
-          tr.classList.add('highlight');
-          // add restaurant data to modal
-          modal.innerHTML = '';
+    sodexoBtn.addEventListener('click', () => {
+      const sodexoRestaurants = restaurants.filter(
+        restaurant => restaurant.company === 'Sodexo'
+      );
 
-          // fetch menu
-          const menu = await fetchData(
-            apiUrl + `/restaurants/daily/${restaurant._id}/fi`
-          );
-          console.log(menu);
+      createTable(sodexoRestaurants);
+    });
 
-          const menuHtml = restaurantModal(restaurant, menu);
-          modal.insertAdjacentHTML('beforeend', menuHtml);
+    compassBtn.addEventListener('click', () => {
+      const compassRestaurants = restaurants.filter(
+        restaurant => restaurant.company === 'Compass Group'
+      );
 
-          modal.showModal();
-        } catch (error) {
-          alert(error.message);
-        }
-      });
-    }
+      createTable(compassRestaurants);
+    });
+
+    resetBtn.addEventListener('click', () => {
+      createTable(restaurants);
+    });
   } catch (error) {
-    alert(error.message);
+    modal.innerHTML = (errorModal error.message);
+    modal.showModal();
   }
 };
 
