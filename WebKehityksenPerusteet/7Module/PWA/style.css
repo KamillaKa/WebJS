@@ -1,0 +1,41 @@
+@font-face {
+  font-family: 'Oswald';
+  src: url('Oswald/Oswald-VariableFont_wght.ttf');
+}
+
+body {
+  font-family: Oswald, sans-serif;
+}
+
+/* Make content area fill the entire browser window */
+html,
+.fullscreen {
+  display: block;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+/* Center the content in the browser window */
+.container {
+  margin: auto;
+  text-align: center;
+}
+
+.title {
+  font-size: 3rem;
+}
+
+h2 {
+  text-align: center;
+}
+
+p {
+  width: 70%;
+  text-align: center;
+  margin: auto;
+  padding: 1em 0 2em 0;
+}
+
+
