@@ -5,25 +5,43 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Responsive test</title>
   <style>
-
-    body {
-      background-color: red;
+    html {
+      background: url(fantasy-2049567_1920.jpg) no-repeat center center fixed;
+      background-size: cover;
     }
 
     h1 {
       font-size: 50px;
+      color: antiquewhite;
+    }
+
+    h2 {
+      color: beige;
     }
 
     p {
       font-family: 'Courier New', Courier, monospace;
       font-size: 25px;
+      color: antiquewhite;
     }
 
-    @media only screen and (min-width: 300px) {
-      body {
-        background-color: violet;
-      }
+    #bkg {
+      height: 400px;
+      width: 50%;
+      background-color: darkslategrey;
+      background-image: url(dogSma.jpg);
+      background-size: cover;
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+    }
 
+    #story {
+      padding: 10px;
+    }
+
+
+    @media only screen and (min-width: 300px) {
       h1 {
         font-size: 40px;
       }
@@ -39,9 +57,6 @@
     }
 
     @media only screen and (min-width: 600px) {
-      body {
-        background-color: turquoise;
-      }
 
       h1 {
         font-size: 30px;
@@ -55,13 +70,11 @@
         width: 70%;
         margin: auto;
       }
+
+      #bkg {
+        background-image: url(dogMed.jpg);
+      }
     }
-
-
-
-
-
-
   </style>
 </head>
 <body>
@@ -72,6 +85,16 @@
     <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Officia aut ab recusandae iure ipsa enim facilis doloribus odio iste vel culpa molestiae modi aliquam ullam ipsam, aliquid tempore adipisci obcaecati?</p>
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis facilis, quidem quam velit dolorem molestias ab commodi. Reprehenderit iure asperiores quia reiciendis corporis id delectus explicabo quo velit, non blanditiis?</p>
     <h1>Toinen iso otsikko</h1>
+    <div id="bkg"></div>
+    <p id="story">Havia uma pequena vila à beira-mar, onde as gaivotas dançavam com as ondas e os pescadores contavam histórias de pescarias épicas ao redor da fogueira. No centro dessa vila, vivia uma jovem chamada Sofia, conhecida por sua voz doce e encantadora.
+
+      Certo dia, um forasteiro chegou à vila. Seu nome era Miguel, um músico viajante que buscava inspiração para suas canções. Ao ouvir a voz de Sofia, ficou hipnotizado por sua melodia. Ele pediu a ela que cantasse para ele, e ela concordou.
+
+      Quando Sofia começou a cantar, algo mágico aconteceu. As notas de sua voz envolveram Miguel como um abraço caloroso e o levaram a um lugar de paz e beleza. Ele percebeu que havia encontrado a inspiração que tanto buscava.
+
+      Miguel passou semanas na vila, compondo músicas inspiradas pela voz de Sofia e tocando para os moradores. Sua presença trouxe alegria à vila, e os dois se tornaram amigos inseparáveis.
+
+      No final da temporada, quando Miguel partiu para continuar sua jornada, ele deixou para Sofia uma canção que havia escrito especialmente para ela. Era uma melodia que capturava a magia da vila à beira-mar e a doçura da voz de Sofia. E assim, a vila continuou a ser um lugar de encanto, onde as ondas sussurravam segredos e a música de Sofia ecoava nas brisas do mar.</p>
   </main>
 </body>
 </html>

@@ -151,17 +151,16 @@ h2 {
 /* footer */
 footer {
   background-color: var(--coral);
-  display: block;
   height: 5em;
   width: 70%;
   padding: 2em;
   position: absolute;
-  bottom: 0;
+  z-index: -1;
   margin-left: auto;
   margin-right: auto;
   left: 0;
   right: 0;
-  text-align: center;
+  box-shadow: var(--boxShadow);
 }
 
 #copyright {
