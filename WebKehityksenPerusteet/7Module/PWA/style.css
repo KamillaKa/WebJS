@@ -5,6 +5,8 @@
 
 body {
   font-family: Oswald, sans-serif;
+  background: url(cat.jpg) no-repeat center center fixed;
+  background-size: cover;
 }
 
 /* Make content area fill the entire browser window */
