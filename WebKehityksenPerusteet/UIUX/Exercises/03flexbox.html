@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flexbox</title>
+  <style>
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+    }
+
+    /* .box {
+        height: 100px;
+        width: 100px;
+        border: 1px solid black;
+        color: aliceblue;
+    } */
+
+    /* container */
+    .container {
+      background-color: lightpink;
+      height: 100vh;
+      display: flex;
+      position: relative;
+      /* flex-direction: row;
+      justify-content: center;
+      flex-wrap: wrap;
+      align-content: center;
+      align-items: center; */
+    }
+
+    #vasen {
+      background-color: lightcoral;
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #oikea {
+      background-color: lightsalmon;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    #yellow {
+      background-color: lightyellow;
+      color: black;
+      height: 100px;
+      width: 100px;
+      border: 1px solid black;
+    }
+
+    #otsikko {
+      background-color: lightseagreen;
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+    }
+
+    #blue {
+      background-color: lightskyblue;
+      flex: 3;
+    }
+
+    #redish {
+      background-color: palevioletred;
+      position: absolute;
+      width: 100%;
+      height: 100px;
+      bottom: 0;
+      text-align: center;
+    }
+    /* #orangish { background-color: peachpuff; color: black;}
+    #yellowish { background-color: palegoldenrod; color: black;}
+    #greenish { background-color: palegreen; color: black;}
+    #blueish { background-color: paleturquoise; color: black;} */
+    /* relative and absolute positioning with blue */
+
+    @media screen and (max-width: 600px) {
+      .container {
+        flex-direction: column;
+      }
+
+      #vasen {
+        order: 2;
+      }
+
+      #oikea {
+        order: 1;
+      }
+    }
+
+</style>
+</head>
+<body>
+  <section class="container">
+    <div class="box" id="vasen">
+      <div class="box" id="yellow">Kuva</div>
+    </div>
+    <div class="box" id="oikea">
+      <div class="box" id="otsikko">
+        <h1>Heading 1</h1>
+      </div>
+      <div class="box" id="blue">Lista</div>
+    </div>
+    <div class="box" id="redish">Cmore</div>
+    <!--
+    <div class="box" id="orangish">Box 7</div>
+    <div class="box" id="yellowish">Box 8</div>
+    <div class="box" id="greenish">Box 9</div>
+    <div class="box" id="blueish">Box 10</div> -->
+  </section>
+
+  <!-- Float continues, clearing -->
+
+  <h1>Heading 2</h1>
+
+  <!-- Responsive images and centering -->
+
+</body>
+</html>
