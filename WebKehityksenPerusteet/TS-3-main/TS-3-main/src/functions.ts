@@ -1,5 +1,5 @@
-const fetchData = async (url: string, options = {}) => {
-  const response = await fetch(url, options);
+const fetchData = async <T>(url: string, options: ReaquestInit = {}): Promise<T> => {
+  const response = await fetch<Restaurant>(url, options);
   if (!response.ok) {
     throw new Error(`Error ${response.status} occured`);
   }
