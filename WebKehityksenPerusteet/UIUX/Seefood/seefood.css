@@ -70,6 +70,10 @@ nav ul li a:hover {
 
 /* first section */
 
+#first {
+  padding-top: 0;
+}
+
 #hero {
   background: url(pics/heroLarge.jpg) no-repeat center center fixed;
   background-size: cover;
@@ -80,7 +84,36 @@ nav ul li a:hover {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+}
+
+#heroWrapper {
+  padding: 5em;
+}
+
+#heroh {
+  color: var(--seafoam);
+  font-family: 'garamond, serif';
+  font-size: 5em;
+  padding-bottom: 0.1em;
+}
+
+#herop {
+  color: var(--white);
+  font-size: 1.5em;
+}
+
+#open_dialog {
+  padding: 0.5em;
+  margin: 1em 0.5em;
+  color: var(--white);
+  border: 0.1em solid;
+  border-radius: 1em;
+  background-color: var(--coral);
+  font-size: 1.2em;
+}
+
+#open_dialog:hover {
+  cursor: pointer;
 }
 
 .diaBtn, #submitBtn {
@@ -90,7 +123,7 @@ nav ul li a:hover {
   height: 44px;
   border-radius: calc(3px * var(--ratio));
   border: none;
-  letter-spacing: ccalc(3 * var(--leading, 0.025em));
+  letter-spacing: calc(3 * var(--leading, 0.025em));
   font-family: inherit;
   color: var(--white);
   background-color: var(--seafoam);
@@ -103,6 +136,49 @@ nav ul li a:hover {
   cursor: pointer;
 }
 
+/* btns section */
+
+#btns {
+  padding-top: 5em;
+}
+
+#seacreh {
+  color: var(--coral);
+  font-family: 'garamond, serif';
+  font-size: 1.5em;
+  font-style: italic;
+}
+
+#infoh {
+  color: var(--white);
+  font-size: 1.5em;
+  padding: 0.2em 1em 0.5em 1em;
+}
+
+#btnsWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#btns {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.seacre {
+  padding: 0.5em;
+  margin: 1em 0.5em;
+  color: var(--coral);
+  border: 0.1em solid var(--coral);
+  border-radius: 1em;
+}
+
+.seacre:hover {
+  cursor: pointer;
+}
 
 /* moreus section */
 .moreus {
@@ -110,7 +186,7 @@ nav ul li a:hover {
   background-image: url(pics/moreus_wallpaper2.jpg);
   background-color: var(--white);
   background-position: center;
-  margin: 3em auto;
+  margin: 7em auto;
   padding: 3em;
   border-radius: 3px;
   box-shadow: var(--boxShadow);
@@ -123,17 +199,15 @@ h2 {
 
 #moreush {
   color: var(--deepblue);
-  font-family: Arial, sans-serif;
-  font-size: 18px;
+  font-family: 'garamond, serif';
+  font-size: 1.5em;
   font-style: italic;
   padding-top: 1em;
 }
 
 #ourStory {
   color: var(--seafoam);
-  font-family: Georgia, serif;
-  font-weight: bold;
-  font-size: 24px;
+  font-size: 1.5em;
   padding: 0.5em 0 1em 0;
   }
 
@@ -279,6 +353,20 @@ footer {
     width: 90%;
   }
 
+  #heroh {
+    font-size: 4em;
+    padding-bottom: 0.1em;
+  }
+
+  #herop {
+    color: var(--white);
+    font-size: 1.3em;
+  }
+
+  #open_dialog {
+    font-size: 1em;
+  }
+
   .moreus {
     width: 90%;
   }
@@ -321,6 +409,18 @@ footer {
     background-size: 200%;
   }
 
+  #heroh {
+    font-size: 3.7em;
+  }
+
+  #herop {
+    font-size: 1.2em;
+  }
+
+  #open_dialog {
+    font-size: 1.2em;
+  }
+
   .moreus {
     width: 100%;
   }
@@ -351,6 +451,18 @@ footer {
 @media (max-width: 480px) {
   #diaFirst {
     max-width: 90%;
+  }
+
+  #heroh {
+    font-size: 2.5em;
+  }
+
+  #herop {
+    font-size: 1em;
+  }
+
+  #open_dialog {
+    font-size: 1em;
   }
 
  .moreus {
