@@ -13,8 +13,8 @@ while (true) {
         break;
     }
 
-    const itemPrice = parseFloat(prompt("Enter item price:"));
-    const itemQuantity = parseInt(prompt("Enter item quantity:"));
+    const itemPrice = +prompt('Enter item price:')!;
+    const itemQuantity = +prompt('Enter item quantity:')!;
 
     const newItem: Item = { name: itemName, price: itemPrice, quantity: itemQuantity };
     cart.push(newItem);
