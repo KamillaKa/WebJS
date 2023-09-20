@@ -1,5 +1,3 @@
-export {};
-
 // Define a type alias named 'Book' with appropriate properties
 interface Book {
   title: string;
