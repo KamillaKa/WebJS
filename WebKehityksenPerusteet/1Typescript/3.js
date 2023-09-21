@@ -1,5 +1,3 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
 ;
 function promptForBook() {
     // Prompt user for book details (title, author, publication year)

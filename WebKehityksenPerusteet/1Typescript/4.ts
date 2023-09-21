@@ -1,5 +1,3 @@
-export {};
-
 // Define the 'ElectronicDevice' type
 type ElectronicDevice = {
   type: 'electronic';

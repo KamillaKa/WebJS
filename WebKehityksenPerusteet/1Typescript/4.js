@@ -1,5 +1,3 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
 // Implement instances of the 'Product' type
 function createElectronicDevice() {
     var brand = prompt("Enter brand of the electronic device:") || '';
