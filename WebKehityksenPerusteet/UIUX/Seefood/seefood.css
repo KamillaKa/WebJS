@@ -39,7 +39,8 @@ nav {
   padding: 2em;
   margin: 0 auto;
   width: 70%;
-  box-shadow: var(--boxShadow)
+  box-shadow: var(--boxShadow);
+  font-size: 1em;
 }
 
 nav ul {
@@ -60,15 +61,14 @@ nav ul li a {
 
 nav ul li a:hover {
   /*background:  #F4ECE1;*/
-  color: var(--coral)
+  color: var(--seafoam)
 }
 
+/* first section */
 #name {
   color: var(--seafoam);
   font-weight: bold;
 }
-
-/* first section */
 
 #first {
   padding-top: 0;
@@ -107,10 +107,11 @@ nav ul li a:hover {
   padding: 0.5em;
   margin: 1em 0.5em;
   color: var(--white);
-  border: 0.1em solid;
+  border: 0.1em solid var(--deepblue);
   border-radius: 1em;
-  background-color: var(--coral);
+  background-color: var(--deepblue);
   font-size: 1.2em;
+  box-shadow: var(--boxShadow);
 }
 
 #open_dialog:hover {
@@ -140,19 +141,19 @@ nav ul li a:hover {
 /* btns section */
 
 #btns {
-  padding-top: 5em;
+  padding-top: 8em;
 }
 
 #seacreh {
   color: var(--coral);
   font-family: 'garamond, serif';
-  font-size: 1.5em;
+  font-size: 2em;
   font-style: italic;
 }
 
 #infoh {
   color: var(--white);
-  font-size: 1.5em;
+  font-size: 2em;
   padding: 0.2em 1em 0.5em 1em;
 }
 
@@ -175,56 +176,103 @@ nav ul li a:hover {
   color: var(--coral);
   border: 0.1em solid var(--coral);
   border-radius: 1em;
+  font-size: 1.3em;
 }
 
 .seacre:hover {
   cursor: pointer;
+  color: var(--white);
+  background-color: var(--coral);
 }
 
 /* Portion/grid section */
-#popular {
-  width: 70%;
+#meals {
   margin: 7em auto;
+  width: 60%;
+}
+
+#menuh {
+  font-size: 3em;
+  text-align: center;
+  padding: 0 1em 0.1em 1em;
+  color: var(--white);
+}
+
+#sloganh {
+  font-size: 2em;
+  text-align: center;
+  padding: 0.1em 1em 1em 1em;
+  color: var(--deepblue);
+  font-family: 'garamond, serif';
+  font-style: italic;
+}
+
+#popular {
   display: grid;
-  grid-template-columns: repeat(2, minmax(10px, 1fr));
-  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin: auto;
 }
 
 .portion {
   box-shadow: var(--boxShadow);
   border-radius: 3px;
-  padding: 1em;
+  padding: 2em;
   margin: 1em;
   background-color: var(--white);
 }
 
+.porth {
+  padding: 0.5em;
+  font-size: 1.2em;
+  color: var(--seafoam);
+}
+
+.portp {
+  padding: 0 0.5em;
+  font-size: 0.8em;
+  color: var(--deepblue);
+}
 
 #salimg {
   object-fit: cover;
   object-position: center;
   width: 100%;
-  height: 70%;
+  height: 17em;
 }
 
 #shrimg {
   object-fit: cover;
   object-position: center;
   width: 100%;
-  height: 70%;
+  height: 17em;
 }
 
 #lobimg {
   object-fit: cover;
   object-position: center;
   width: 100%;
-  height: 70%;
+  height: 17em;
 }
 
 #paeimg {
   object-fit: cover;
   object-position: center;
   width: 100%;
-  height: 70%;
+  height: 17em;
+}
+
+#fisimg {
+  object-fit: cover;
+  object-position: center;
+  width: 100%;
+  height: 17em;
+}
+
+#craimg {
+  object-fit: cover;
+  object-position: center;
+  width: 100%;
+  height: 17em;
 }
 
 /* moreus section */
@@ -233,8 +281,8 @@ nav ul li a:hover {
   background-image: url(pics/moreus_wallpaper2.jpg);
   background-color: var(--white);
   background-position: center;
-  margin: 7em auto;
-  padding: 3em;
+  margin: 10em auto;
+  padding: 4em;
   border-radius: 3px;
   box-shadow: var(--boxShadow);
   position: relative;
@@ -249,13 +297,12 @@ h2 {
   font-family: 'garamond, serif';
   font-size: 1.5em;
   font-style: italic;
-  padding-top: 1em;
 }
 
 #ourStory {
   color: var(--seafoam);
   font-size: 1.5em;
-  padding: 0.5em 0 1em 0;
+  padding: 0.2em 0 1em 0;
   }
 
 #anchor {
@@ -268,14 +315,12 @@ h2 {
 .wrappermoreus {
   background-color: var(--backcolor);
   clear: both;
-  padding: 2em;
 }
 
 #harbor {
-  width: 15em;
+  width: 25em;
   float: left;
   margin-right: 2em;
-  margin-bottom: 2em;
 }
 
 .moreusp {
@@ -298,6 +343,7 @@ footer {
   text-align: center;
   font-size: 15px;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  color: var(--deepblue);
 }
 /* valmiista dialogista */
 
@@ -412,6 +458,10 @@ footer {
 
   #open_dialog {
     font-size: 1em;
+  }
+
+  #popular {
+    width: 90%;
   }
 
   .moreus {
