@@ -84,6 +84,7 @@ nav ul li a:hover {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  box-shadow: var(--boxShadow);
 }
 
 #heroWrapper {
@@ -180,8 +181,54 @@ nav ul li a:hover {
   cursor: pointer;
 }
 
+/* Portion/grid section */
+#popular {
+  width: 70%;
+  margin: 7em auto;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(10px, 1fr));
+  grid-template-rows: 1fr 1fr;
+}
+
+.portion {
+  box-shadow: var(--boxShadow);
+  border-radius: 3px;
+  padding: 1em;
+  margin: 1em;
+  background-color: var(--white);
+}
+
+
+#salimg {
+  object-fit: cover;
+  object-position: center;
+  width: 100%;
+  height: 70%;
+}
+
+#shrimg {
+  object-fit: cover;
+  object-position: center;
+  width: 100%;
+  height: 70%;
+}
+
+#lobimg {
+  object-fit: cover;
+  object-position: center;
+  width: 100%;
+  height: 70%;
+}
+
+#paeimg {
+  object-fit: cover;
+  object-position: center;
+  width: 100%;
+  height: 70%;
+}
+
 /* moreus section */
-.moreus {
+#moreus {
   width: 70%;
   background-image: url(pics/moreus_wallpaper2.jpg);
   background-color: var(--white);
