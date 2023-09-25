@@ -1,4 +1,7 @@
-const restaurantRow = (restaurant) => {
+import {Menu} from './interfaces/Menu';
+import {Restaurant} from './interfaces/Restaurant';
+
+const restaurantRow = (restaurant: Restaurant) => {
   const {name, address, company} = restaurant;
   const tr = document.createElement('tr');
   const nameCell = document.createElement('td');
@@ -13,7 +16,7 @@ const restaurantRow = (restaurant) => {
   return tr;
 };
 
-const restaurantModal = (restaurant, menu) => {
+const restaurantModal = (restaurant: Restaurant, menu: Menu) => {
   const {name, address, city, postalCode, phone, company} = restaurant;
   let html = `<h3>${name}</h3>
     <p>${company}</p>
