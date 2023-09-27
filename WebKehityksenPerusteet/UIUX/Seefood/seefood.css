@@ -40,7 +40,22 @@ nav {
   margin: 0 auto;
   width: 70%;
   box-shadow: var(--boxShadow);
-  font-size: 1em;
+}
+
+#nav-links {
+  display: flex;
+  justify-content: center;
+}
+
+#nav-links ul {
+  display: flex;
+  align-items: center;
+}
+
+#name {
+  font-size: 1.4em;
+  margin-right: 1.3em;
+  color: var(--seafoam);
 }
 
 nav a {
@@ -59,27 +74,25 @@ nav ul li {
 
 nav ul li a {
   text-decoration: none;
-  padding: 0.5em 1em;
+  padding: 1em 1.3em;
   color: var(--deepblue);
 }
 
 nav ul li a:hover {
-  /*background:  #F4ECE1;*/
   color: var(--seafoam);
-  /* border: 0.1em solid var(--seafoam);
-  border-radius: 1em; */
+}
+
+#menu-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 #hamburger {
   display: none;
 }
 
-/* first section */
-#name {
-  color: var(--seafoam);
-  font-weight: bold;
-}
-
+/* hero section */
 #first {
   padding-top: 0;
 }
@@ -359,7 +372,6 @@ footer {
 /* valmiista dialogista */
 
 /* diaBtn style is under first section */
-
 .diaBtn:focus {
   outline: none;
   border: 0.0625rem solid transparent;
@@ -445,6 +457,11 @@ footer {
   box-shadow: 0 0 0 0.125rem #fff, 0 0 0 0.2rem var(--dark-color-bg);
 }
 
+/*My dialog */
+.seafood-dialog::backdrop {
+  backdrop-filter: blur(5px);
+}
+
 /* responsive */
 @media (max-width: 1240px) {
   #harbor {
@@ -503,9 +520,13 @@ footer {
 
 @media (max-width: 724px) {
   nav {
-    width: 100%;
     flex-direction: column;
-    text-align: center;
+    width: 100%;
+  }
+
+  #menu-container {
+    justify-content: space-between;
+    width: 100%;
   }
 
   #name {

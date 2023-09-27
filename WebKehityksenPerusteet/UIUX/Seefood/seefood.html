@@ -8,11 +8,14 @@
   <title>Seefood</title>
   <script src="seefoodDialog.js" defer></script>
   <script src="navTog.js" defer></script>
+  <script src="ownDialog.js" defer></script>
 </head>
 <body>
   <nav>
-    <a href="#" id="name">Seefood</a>
-    <div id="hamburger">&#9776;</div>
+    <div id="menu-container">
+      <a href="#" id="name">Seefood</a>
+      <div id="hamburger">&#9776;</div>
+    </div>
     <div id="nav-links">
       <ul>
         <li><a href="#btns">Ingredients</a></li>
@@ -27,7 +30,7 @@
         <div id="heroWrapper">
           <h1 id="heroh">The Seefood</h1>
           <p id="herop">Where the fish tell tales and the shells don't clam up!</p>
-          <button id="open_dialog">Dive in</div>
+          <button id="open_dialog">Dive in</button>
         </div>
       </div>
     </section>
@@ -35,10 +38,10 @@
       <h2 id="seacreh">Seecreatures</h2>
       <h2 id="infoh">Learn about our ingredients</h2>
       <div id="btnsWrapper">
-        <div class="seacre">Crab</div>
-        <div class="seacre">Clam</div>
-        <div class="seacre">Hummus</div>
-        <div class="seacre">Cod</div>
+        <div class="seacre" id="crab">Crab</div>
+        <div class="seacre" id="clam">Clam</div>
+        <div class="seacre" id="hummus">Hummus</div>
+        <div class="seacre" id="cod">Cod</div>
       </div>
     </section>
     <section id="meals">
@@ -111,6 +114,30 @@
         <input type="submit" value="Send" id="submitBtn" class="diaBtn">
       </div>
     </form>
+  </dialog>
+  <dialog id="dialog_crab" class="seafood-dialog">
+    <img>
+    <h2 class="seaCrehd">Sideways to the table, full crab-ahead!</h2>
+    <p>Caught fresh from the ocean, our crab is a succulent delight. Rich in flavor and tender in texture, it’s the seafood king that wears its crown well.</p>
+    <button id="close_crab">Close</button>
+  </dialog>
+  <dialog id="dialog_clam" class="seafood-dialog">
+    <img>
+    <h2 class="seaCrehd">Shut clam-tight, taste right!</h2>
+    <p>Harvested from clean, nutrient-rich waters, our clams are a shellfish lover's dream. A bite-sized treat that's both juicy and briny, offering a taste of the ocean in each morsel.</p>
+    <button id="close_clam">Close</button>
+  </dialog>
+  <dialog id="dialog_hummus" class="veggie-dialog">
+    <img>
+    <h2 class="seaCrehd">Hummus-dip in, dine out!</h2>
+    <p>Blended to perfection from quality chickpeas, tahini, and a dash of olive oil. Our hummus is not just a side dish; it's a creamy journey through the Mediterranean.</p>
+    <button id="close_hummus">Close</button>
+  </dialog>
+  <dialog id="dialog_cod" class="seafood-dialog">
+    <img>
+    <h2 class="seaCrehd"> Hooked and cod-cooked!</h2>
+    <p>Sourced from cold, deep waters for optimal flavor, our cod is a lean, white fish that's as versatile as it is delicious. Cooked to perfection, it's the A-student of the seafood menu.</p>
+    <button id="close_cod">Close</button>
   </dialog>
 </body>
 </html>
