@@ -123,6 +123,23 @@ loginForm?.addEventListener('submit', async (evt)=>{
 // TODO: profile form event listener
 // event listener should call updateUserData function and update the DOM with
 // the user data by calling addUserDataToDom or checkToken
+profileForm?.addEventListener('submit', async (evt) => {
+  evt.preventDefault();
+  if (!profileUsernameInput || !profileEmailInput) {
+    return;
+  }
+  const user = {
+    username: profileUsernameInput.value,
+    email: profileEmailInput.value,
+  };
+  const token = localStorage.getItem('token');
+  if (!token) {
+    return;
+  }
+  const updateResult = await updateUserData(user, token);
+  console.log(updateResult);
+  checkToken();
+});
 
 // TODO: avatar form event listener
 // event listener should call uploadAvatar function and update the DOM with
