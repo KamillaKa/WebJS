@@ -38,10 +38,10 @@
       <h2 id="seacreh">Seecreatures</h2>
       <h2 id="infoh">Learn about our ingredients</h2>
       <div id="btnsWrapper">
-        <div class="seacre" id="crab">Crab</div>
-        <div class="seacre" id="clam">Clam</div>
-        <div class="seacre" id="hummus">Hummus</div>
-        <div class="seacre" id="cod">Cod</div>
+        <button id="open_dialog">Crab</button>
+        <button id="open_dialog">Clam</button>
+        <button id="open_dialog">Hummus</button>
+        <button id="open_dialog">Cod</button>
       </div>
     </section>
     <section id="meals">
@@ -54,27 +54,27 @@
           <p class="portp">Salmon fillet grilled to perfection, seasoned with a mix of herbs and spices. Accompanied by a slice of lemon and a side of steamed vegetables for a balanced meal.</p>
         </section>
         <section class="portion shrimp">
-          <img src="pics/shrimp.jpg" id="shrimg" alt="Grilled salmon fillet dish on a plate">
+          <img src="pics/shrimp.jpg" id="shrimg" alt="Shrimp scampi dish on a plate">
           <h2 class="porth">Shrimp Scampi</h2>
           <p class="portp">Shrimp cooked in a sauce of garlic, white wine, and butter, offering a rich, flavorful experience. Typically served over pasta or rice to soak up the sauce.</p>
         </section>
         <section class="portion lobster">
-          <img src="pics/lobster.jpg" id="lobimg" alt="Grilled salmon fillet dish on a plate">
+          <img src="pics/lobster.jpg" id="lobimg" alt="Lobster bisque dish on a bowl">
           <h2 class="porth">Lobster Bisque</h2>
           <p class="portp">A creamy, rich soup made from lobster stock, complemented by aromatic vegetables. Often includes a splash of brandy or sherry for an added depth of flavor.</p>
         </section>
         <section class="portion paella">
-          <img src="pics/paella.jpg" id="paeimg" alt="Grilled salmon fillet dish on a plate">
+          <img src="pics/paella.jpg" id="paeimg" alt="Seafood paella dish on a pan">
           <h2 class="porth">Seafood Paella</h2>
           <p class="portp">A traditional Spanish dish featuring rice cooked with saffron and a variety of seafood like shrimp, mussels, and squid. May also include chicken or rabbit for added protein.</p>
         </section>
-        <section class="portion paella">
-          <img src="pics/fish.jpg" id="fisimg" alt="Grilled salmon fillet dish on a plate">
+        <section class="portion tacos">
+          <img src="pics/fish.jpg" id="fisimg" alt="Two crispy fish tacos dish on a plate">
           <h2 class="porth">Crispy Fish Tacos</h2>
           <p class="portp">Fish fillets are fried until crispy and placed in tortillas. They're then topped with cabbage slaw and a tangy sauce, making for a mix of textures and flavors.</p>
         </section>
-        <section class="portion paella">
-          <img src="pics/crab.jpg" id="craimg" alt="Grilled salmon fillet dish on a plate">
+        <section class="portion crab">
+          <img src="pics/crab.jpg" id="craimg" alt="Garlic butter crab dish on a bowl">
           <h2 class="porth">Garlic Butter Crab</h2>
           <p class="portp">Dungeness crab cooked in a sauce made from garlic and butter, providing a rich and savory experience. Often served with a side of bread to soak up the excess sauce.</p>
         </section>
@@ -116,28 +116,28 @@
     </form>
   </dialog>
   <dialog id="dialog_crab" class="seafood-dialog">
-    <img>
-    <h2 class="seaCrehd">Sideways to the table, full crab-ahead!</h2>
+    <img src="pics/incrab.jpg" alt="red crab on a cutting board">
+    <h2>Sideways to the table, full crab-ahead!</h2>
     <p>Caught fresh from the ocean, our crab is a succulent delight. Rich in flavor and tender in texture, it’s the seafood king that wears its crown well.</p>
-    <button id="close_crab">Close</button>
+    <button id="close_dialog" class="closeSeacre diaBtn">Okay!</button>
   </dialog>
   <dialog id="dialog_clam" class="seafood-dialog">
-    <img>
-    <h2 class="seaCrehd">Shut clam-tight, taste right!</h2>
+    <img src="pics/inclam.jpg" alt="clam on a beach on a sunny day">
+    <h2>Shut clam-tight, taste right!</h2>
     <p>Harvested from clean, nutrient-rich waters, our clams are a shellfish lover's dream. A bite-sized treat that's both juicy and briny, offering a taste of the ocean in each morsel.</p>
-    <button id="close_clam">Close</button>
+    <button id="close_dialog" class="closeSeacre diaBtn">Okay!</button>
   </dialog>
-  <dialog id="dialog_hummus" class="veggie-dialog">
-    <img>
-    <h2 class="seaCrehd">Hummus-dip in, dine out!</h2>
+  <dialog id="dialog_hummus" class="seafood-dialog">
+    <img src="pics/inhummus.jpg" alt="Chickpeas in spoon and on table">
+    <h2>Hummus-dip in, dine out!</h2>
     <p>Blended to perfection from quality chickpeas, tahini, and a dash of olive oil. Our hummus is not just a side dish; it's a creamy journey through the Mediterranean.</p>
-    <button id="close_hummus">Close</button>
+    <button id="close_dialog" class="closeSeacre diaBtn">Okay!</button>
   </dialog>
   <dialog id="dialog_cod" class="seafood-dialog">
-    <img>
-    <h2 class="seaCrehd"> Hooked and cod-cooked!</h2>
+    <img src="pics/incod.jpg" alt="flock of cods swimming in blue sea">
+    <h2> Hooked and cod-cooked!</h2>
     <p>Sourced from cold, deep waters for optimal flavor, our cod is a lean, white fish that's as versatile as it is delicious. Cooked to perfection, it's the A-student of the seafood menu.</p>
-    <button id="close_cod">Close</button>
+    <button id="close_dialog" class="closeSeacre diaBtn">Okay!</button>
   </dialog>
 </body>
 </html>

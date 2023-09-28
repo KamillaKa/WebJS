@@ -97,3 +97,59 @@ const success = async (pos) => {
 };
 
 navigator.geolocation.getCurrentPosition(success, error, positionOptions);
+
+// login
+// Initialize empty object to hold customer data
+let customers = {};
+
+// Function to save data to local storage
+const saveToStorage = () => {
+  localStorage.setItem('customers', JSON.stringify(customers));
+};
+
+// Load customer data from local storage if available
+const loadFromStorage = () => {
+  const storedCustomers = localStorage.getItem('customers');
+  if (storedCustomers) {
+    customers = JSON.parse(storedCustomers);
+  }
+};
+
+// Call function to load data
+loadFromStorage();
+
+// Registration form event listener
+document.getElementById('registration-form').addEventListener('submit', function(e) {
+  e.preventDefault();
+
+  // Get form values
+  const username = document.getElementById('username').value;
+  const email = document.getElementById('email').value;
+  const password = document.getElementById('password').value;
+
+  // Check if user already exists by email
+  if (Object.values(customers).some(c => c.email === email)) {
+    alert('Email already exists');
+    return;
+  }
+
+  // Generate a new customer ID (use length for simplicity)
+  const newCustomerId = Object.keys(customers).length + 1;
+
+  // Store new customer data
+  customers[newCustomerId] = {
+    username,
+    email,
+    password  // Note: Don't store plain passwords in a real application
+  };
+
+  // Save updated data to local storage
+  saveToStorage();
+
+  // Reset form
+  document.getElementById('registration-form').reset();
+
+  alert('Registration successful');
+});
+
+

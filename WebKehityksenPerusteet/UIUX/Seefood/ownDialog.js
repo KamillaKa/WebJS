@@ -1,43 +1,59 @@
-document.addEventListener("DOMContentLoaded", function() {
-  function setupDialog(btnId, dialogId, closeId) {
-    const dialog = document.getElementById(dialogId);
-    const openBtn = document.getElementById(btnId);
-    const closeBtn = document.getElementById(closeId);
+const dialog = document.querySelector('.seafood-dialog');
+const openDialogBtn = document.querySelector('.seacre');
+const closeDialogBtn = document.querySelector('.closeSeacre');
 
-    if (!dialog || !openBtn || !closeBtn) return;
+const elements = dialog.querySelectorAll(
+  'a, button, input, textarea, select, details, [tabindex]:not([tabindex="-1"])'
+);
+const firstElement = elements[0];
+const lastElement = elements[elements.length - 1];
 
-    const elements = dialog.querySelectorAll(
-      "a, button, input, textarea, select, details, [tabindex]:not([tabindex='-1'])"
-    );
-    const firstElement = elements[0];
-    const lastElement = elements[elements.length - 1];
-
-    const trapFocus = (e) => {
-      if (e.key === "Tab") {
-        if (!e.shiftKey && document.activeElement === lastElement) {
-          e.preventDefault();
-          firstElement.focus();
-        } else if (e.shiftKey && document.activeElement === firstElement) {
-          e.preventDefault();
-          lastElement.focus();
-        }
-      }
-    };
-
-    openBtn.addEventListener("click", () => {
-      dialog.showModal();
-      dialog.addEventListener("keydown", trapFocus);
-    });
-
-    closeBtn.addEventListener("click", (e) => {
+const trapFocus = e => {
+  if (e.key === 'Tab') {
+    const tabForwards = !e.shiftKey && document.activeElement === lastElement;
+    const tabBackwards = e.shiftKey && document.activeElement === firstElement;
+    if (tabForwards) {
+      // only TAB is pressed, not SHIFT simultaneously
+      // Prevent default behavior of keydown on TAB (i.e. focus next element)
       e.preventDefault();
-      dialog.close();
-      dialog.removeEventListener("keydown", trapFocus);
-    });
+      firstElement.focus();
+    } else if (tabBackwards) {
+      // TAB and SHIFT are pressed simultaneously
+      e.preventDefault();
+      lastElement.focus();
+    }
   }
+};
 
-  setupDialog("crab", "dialog_crab", "close_crab");
-  setupDialog("clam", "dialog_clam", "close_clam");
-  setupDialog("hummus", "dialog_hummus", "close_hummus");
-  setupDialog("cod", "dialog_cod", "close_cod");
-});
+const openDialog = () => {
+  dialog.showModal();
+  dialog.addEventListener('keydown', trapFocus);
+};
+
+const closeDialog = e => {
+  e.preventDefault();
+  dialog.close();
+  dialog.removeEventListener('keydown', trapFocus);
+  openDialogBtn.focus();
+};
+
+openDialogBtn.addEventListener('click', openDialog);
+closeDialogBtn.addEventListener('click', closeDialog);
+
+if (typeof dialog.showModal !== 'function') {
+  /**
+   * How to add polyfill outside CodePen conditionally
+   * let polyfill = document.createElement("script");
+   * polyfill.type = "text/javascript";
+   * polyfill.src = "/dist/dialog-polyfill.js";
+   * document.body.append(polyfill);
+
+   * const polyfillStyles = document.createElement("link");
+   * polyfillStyles.rel = "stylesheet";
+   * polyfillStyles.href = "dialog-polyfill.css";
+   * document.head.append(polyfillStyles);
+   **/
+
+  // Register polyfill on dialog element once the script has loaded
+  dialogPolyfill.registerDialog(dialog);
+}

@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>School restaurants</title>
   <link href="t5.css" rel="stylesheet">
   <script src="t5.js" type="module"></script>
 </head>
@@ -17,17 +16,29 @@
     <button id="compass">Compass Group</button>
     <button id="reset">Show all</button>
   </div>
-  <table>
-    <tr>
-      <th>Name</th>
-      <th>Address</th>
-    </tr>
-    <!-- add restaurants here -->
-  </table>
+  <main>
+    <section id="registration-section">
+      <h2>Customer Registration</h2>
+      <form id="registration-form">
+        <input type="text" id="username" placeholder="Username" required>
+        <input type="email" id="email" placeholder="Email" required>
+        <input type="password" id="password" placeholder="Password" required>
+        <button type="submit">Register</button>
+      </form>
+    </section>
+    <section class="main-content">
+      <table>
+        <tr>
+          <th>Name</th>
+          <th>Address</th>
+        </tr>
+        <!-- add restaurants here -->
+      </table>
+    </section>
+  </main>
   <!-- modal -->
   <dialog>
     <!-- add restaurant info here when restaurant is clicked -->
   </dialog>
 </body>
-
 </html>
