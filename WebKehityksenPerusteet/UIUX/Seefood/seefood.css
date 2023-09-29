@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Chelsea+Market&display=swap');
+
 * {
   padding: 0;
   margin: 0;
@@ -56,6 +58,7 @@ nav {
   font-size: 1.4em;
   margin-right: 1.3em;
   color: var(--seafoam);
+  font-family: 'Chelsea Market', cursive;
 }
 
 nav a {
@@ -116,7 +119,7 @@ nav ul li a:hover {
 
 #heroh {
   color: var(--seafoam);
-  font-family: 'garamond, serif';
+  font-family: 'Chelsea Market', cursive;
   font-size: 5em;
   padding-bottom: 0.1em;
 }
@@ -125,6 +128,7 @@ nav ul li a:hover {
   color: var(--white);
   font-size: 1.4em;
   padding-left: 0.3em;
+  font-style: italic;
 }
 
 #open_dialog,  .seacre{
@@ -137,7 +141,6 @@ nav ul li a:hover {
   font-size: 1.2em;
   box-shadow: var(--boxShadow);
   font-family: 'garamond, serif';
-  font-style: italic;
 }
 
 #open_dialog:hover, .seacre:hover {
@@ -357,8 +360,8 @@ footer {
   margin: 0.5em 0;
   text-align: center;
   font-size: 15px;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  color: var(--deepblue);
+  font-family: 'Chelsea Market', cursive;
+  color: var(--white);
 }
 /* valmiista dialogista */
 
