@@ -127,7 +127,7 @@ nav ul li a:hover {
   padding-left: 0.3em;
 }
 
-#open_dialog {
+#open_dialog,  .seacre{
   padding: 0.5em;
   margin: 1em 0.5em;
   color: var(--white);
@@ -136,10 +136,14 @@ nav ul li a:hover {
   background-color: var(--deepblue);
   font-size: 1.2em;
   box-shadow: var(--boxShadow);
+  font-family: 'garamond, serif';
+  font-style: italic;
 }
 
-#open_dialog:hover {
+#open_dialog:hover, .seacre:hover {
   cursor: pointer;
+  background-color: var(--white);
+  color: var(--deepblue);
 }
 
 .diaBtn, #submitBtn {
@@ -169,11 +173,13 @@ nav ul li a:hover {
 }
 
 #seacreh {
-  color: var(--coral);
+  color: var(--deepblue);
   font-family: 'garamond, serif';
   font-size: 2em;
   font-style: italic;
 }
+
+/* seacre buttons have same css with Dive In button */
 
 #infoh {
   color: var(--white);
@@ -192,21 +198,6 @@ nav ul li a:hover {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-}
-
-.seacre {
-  padding: 0.5em;
-  margin: 1em 0.5em;
-  color: var(--coral);
-  border: 0.1em solid var(--coral);
-  border-radius: 1em;
-  font-size: 1.3em;
-}
-
-.seacre:hover {
-  cursor: pointer;
-  color: var(--white);
-  background-color: var(--coral);
 }
 
 /* Portion/grid section */
@@ -448,12 +439,12 @@ footer {
   color: var(--deepblue);
 }
 
-#close_dialog {
+#close_dialog, .closeSeacre {
   background-color: var(--coral);
   color: var(--white);
 }
 
-#submitBtn:focus, #close_dialog:focus {
+#submitBtn:focus, #close_dialog:focus, .closeSeacre:focus {
   box-shadow: 0 0 0 0.125rem #fff, 0 0 0 0.2rem var(--dark-color-bg);
 }
 
@@ -461,9 +452,8 @@ footer {
 .seafood-dialog {
   border: none !important;
   border-radius: calc(5px * var(--ratio));
-  box-shadow: 0 0 #0000, 0 0 #0000, 0 25px 50px -12px rgba(0, 0, 0, 0.25);
   padding: 1.6rem;
-  max-width: 400px;
+  max-width: 30em;
   margin: auto;
 }
 
@@ -486,26 +476,14 @@ footer {
 }
 
 .seafood-dialog h2 {
-  padding: 1em;
-  font-weight: 800;
   color: var(--seafoam);
+  padding: 0.7em;
 }
 
 .seafood-dialog p {
   color: var(--deepblue);
   padding: 0 1em;
 }
-
-.seafood-dialog button {
-  padding: 1em;
-  color: var(--coral);
-  border: 0.1em solid var(--coral);
-  border-radius: 1em;
-  font-size: 1.3em;
-  background-color: var(--white);
-}
-
-
 
 /* responsive */
 @media (max-width: 1240px) {
@@ -669,8 +647,8 @@ footer {
     transform: none;
   }
 
-  #diaFirst {
-    max-width: 60%;
+  #diaFirst, .seafood-dialog {
+    max-width: 70%;
   }
 
   #harbor {
@@ -682,7 +660,7 @@ footer {
 }
 
 @media (max-width: 480px) {
-  #diaFirst {
+  #diaFirst, .seafood-dialog {
     max-width: 90%;
   }
 
@@ -718,7 +696,6 @@ footer {
   #sloganh {
     font-size: 1.5em;
   }
-
 
   #moreus {
     padding: 0em;
