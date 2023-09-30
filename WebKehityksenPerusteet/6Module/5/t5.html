@@ -9,15 +9,17 @@
 </head>
 
 <body>
-  <h1>Restaurants</h1>
-  <h2 id="welcome-msg"></h2>
-  <h2>Filter restaurants</h2>
-  <div id="napit">
-    <button id="sodexo">Sodexo</button>
-    <button id="compass">Compass Group</button>
-    <button id="reset">Show all</button>
-  </div>
-  <main>
+  <div class="wrapper">
+    <div class="headers">
+      <h1>Restaurants</h1>
+      <h2 id="welcome-msg"></h2>
+      <h2>Filter restaurants</h2>
+      <div id="napit">
+        <button id="sodexo">Sodexo</button>
+        <button id="compass">Compass Group</button>
+        <button id="reset">Show all</button>
+      </div>
+    </div>
     <section id="registration-section">
       <h2>Customer Registration</h2>
       <form id="registration-form">
@@ -36,10 +38,12 @@
         <!-- add restaurants here -->
       </table>
     </section>
-  </main>
-  <!-- modal -->
-  <dialog>
-    <!-- add restaurant info here when restaurant is clicked -->
-  </dialog>
+    <!-- modal -->
+    <dialog id="myDialog">
+      <div class="dialog-content">
+        <!-- add restaurant info here when restaurant is clicked -->
+      </div>
+    </dialog>
+  </div>
 </body>
 </html>

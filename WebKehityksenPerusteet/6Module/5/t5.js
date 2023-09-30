@@ -10,40 +10,45 @@ modal.addEventListener('click', () => {
 const calculateDistance = (x1, y1, x2, y2) =>
   Math.sqrt((x2 - x1) ** 2 + (y2 - y1) ** 2);
 
-const createTable = (restaurants) => {
-  document.querySelector('table').innerHTML = '';
-  restaurants.forEach((restaurant) => {
-    const tr = restaurantRow(restaurant);
-    document.querySelector('table').appendChild(tr);
-    tr.addEventListener('click', async () => {
-      try {
-        // remove all highlights
-        const allHighs = document.querySelectorAll('.highlight');
-        allHighs.forEach((high) => {
-          high.classList.remove('highlight');
-        });
-        // add highlight
+  const createTable = (restaurants) => {
+    const table = document.querySelector('table');
+    table.innerHTML = '';
+    restaurants.forEach((restaurant, index) => {
+      const tr = restaurantRow(restaurant);
+      if (index < 3) {
         tr.classList.add('highlight');
-        // add restaurant data to modal
-        modal.innerHTML = '';
-
-        // fetch menu
-        const menu = await fetchData(
-          apiUrl + `/restaurants/daily/${restaurant._id}/fi`
-        );
-        console.log(menu);
-
-        const menuHtml = restaurantModal(restaurant, menu);
-        modal.insertAdjacentHTML('beforeend', menuHtml);
-
-        modal.showModal();
-      } catch (error) {
-        modal.innerHTML = errorModal(error.message);
-        modal.showModal();
       }
+      tr.addEventListener('click', async () => {
+        try {
+          // remove all highlights
+          const allHighs = document.querySelectorAll('.highlight');
+          allHighs.forEach((high) => {
+            high.classList.remove('highlight');
+          });
+          // add highlight
+          tr.classList.add('highlight');
+          // add restaurant data to modal
+          modal.innerHTML = '';
+
+          // fetch menu
+          const menu = await fetchData(
+            apiUrl + `/restaurants/daily/${restaurant._id}/fi`
+          );
+          console.log(menu);
+
+          const menuHtml = restaurantModal(restaurant, menu);
+          modal.insertAdjacentHTML('beforeend', menuHtml);
+
+          modal.showModal();
+        } catch (error) {
+          modal.innerHTML = errorModal(error.message);
+          modal.showModal();
+        }
+      });
+      table.appendChild(tr);
     });
-  });
-};
+  };
+
 
 const error = (err) => {
   console.warn(`ERROR(${err.code}): ${err.message}`);
