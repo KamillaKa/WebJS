@@ -5,6 +5,31 @@ body {
   padding: 0;
 }
 
+h1 {
+  padding: 1em 1em 0 1em;
+  font-family: monospace;
+  font-size: 3em;
+  color: #ff5000;
+}
+
+h2 {
+  padding: 0 2em;
+}
+
+button {
+  background-color: #ff5000;
+  border: none;
+  color: 53565a;
+  padding: 1em 2em;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1em;
+  margin: 1em 0.5em;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
 table {
   border-collapse: collapse;
   border-spacing: 0;
@@ -76,11 +101,3 @@ main {
   background-color: #0056b3;
 }
 
-/* favorites */
-tr[data-favorite="true"] {
-  background-color: rgb(194, 194, 235);
-}
-
-.favorite {
-  background-color: yellow;
-}

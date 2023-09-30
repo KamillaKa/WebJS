@@ -100,11 +100,31 @@ navigator.geolocation.getCurrentPosition(success, error, positionOptions);
 
 // login
 // Initialize empty object to hold customer data
+// Initialize empty object to hold customer data
 let customers = {};
+let currentUser = null;
 
 // Function to save data to local storage
 const saveToStorage = () => {
   localStorage.setItem('customers', JSON.stringify(customers));
+};
+
+// Function to display the welcome message
+const displayWelcomeMessage = () => {
+  const welcomeMsgElement = document.getElementById('welcome-msg');
+  if(currentUser) {
+    welcomeMsgElement.innerText = `Welcome, ${currentUser.username}`;
+  } else {
+    welcomeMsgElement.innerText = ''; // Clear the message if not logged in
+  }
+};
+
+// Function to set currentUser from local storage
+const setCurrentUser = () => {
+  if(Object.keys(customers).length > 0) {
+    currentUser = customers[Object.keys(customers)[0]];
+    displayWelcomeMessage();
+  }
 };
 
 // Load customer data from local storage if available
@@ -113,6 +133,7 @@ const loadFromStorage = () => {
   if (storedCustomers) {
     customers = JSON.parse(storedCustomers);
   }
+  displayWelcomeMessage(); // Update to reflect logged-in state
 };
 
 // Call function to load data
@@ -133,15 +154,23 @@ document.getElementById('registration-form').addEventListener('submit', function
     return;
   }
 
-  // Generate a new customer ID (use length for simplicity)
+  // Generate a new customer ID
   const newCustomerId = Object.keys(customers).length + 1;
 
   // Store new customer data
   customers[newCustomerId] = {
     username,
     email,
-    password  // Note: Don't store plain passwords in a real application
+    password
   };
+
+  // Set the currentUser and display the welcome message
+  currentUser = {
+    username,
+    email,
+    password
+  };
+  displayWelcomeMessage();
 
   // Save updated data to local storage
   saveToStorage();
