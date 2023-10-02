@@ -39,7 +39,7 @@ const login = async (user: {
     headers: {
       'Content-Type': 'application/json',
     },
-    body: JSON.stringify(user);
+    body: JSON.stringify(user)
   };
   return await fetchData<LoginUser>(apiUrl + '/auth/login', options)
 };
@@ -52,8 +52,7 @@ const uploadAvatar = async (image: File, token: string): Promise<UploadResult> =
     method: 'POST',
     headers: {
       Authorization: 'Bearer ' + token,
-    }
-    body: formData;
+    },
   }
   return await fetchData(apiUrl + '/users/avatar', options)
 }
@@ -75,7 +74,7 @@ const addUserDataToDom = (user: User): void => {
   (avatarTarget as HTMLImageElement).src = uploadUrl + user.avatar;
 
   profileEmailInput?.value = user.email;
-  profileUsernameInput?value = user.username;
+  profileUsernameInput?value = user.username
 };
 
 // function to get userdata from API using token
