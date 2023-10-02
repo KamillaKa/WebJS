@@ -1,3 +1,4 @@
+import { pwaInfo } from 'virtual:pwa-info';
 import {fetchData} from './functions';
 import {UpdateResult} from './interfaces/UpdateResult';
 import {UploadResult} from './interfaces/UploadResult';
@@ -5,6 +6,7 @@ import {LoginUser, UpdateUser, User} from './interfaces/User';
 import {apiUrl, uploadUrl} from './variables';
 
 // PWA code
+console.log(pwaInfo);
 
 // select forms from the DOM
 const loginForm = document.querySelector('#login-form');
