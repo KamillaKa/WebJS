@@ -1,67 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Chelsea+Market&family=Onest:wght@300&display=swap');
+
+:root {
+  --main: #F5BF03; /* kulta */
+  --hover: #FAE6A0;
+  --text: #292c35;
+  --background: #f0f0f0;
+  --border: #ccc;
+  --boxShadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+  --textShadow: 1px 1px 2px #292c35;
+}
+
+:root.dark {
+  --text: #f0f0f0;
+  --hover: #B8860B;
+  --background: #292c35;
+}
+
 body {
-  background-color: #f0f0f0;
-  font-family: sans-serif;
+  background-color: var(--background);
+  font-family: 'Onest', sans-serif;
   margin: 0;
   padding: 0;
 }
 
-.wrapper {
-  display: grid;
-  grid-template-columns: 3fr 1fr;
-  grid-template-rows: 1fr 6fr;
-  grid-template-areas:
-    'headers login'
-    'rest rest';
+header {
+  display: flex;
+  justify-content: flex-end;
+  padding: 1em;
+  align-items: center;
 }
 
-.headers {
-  grid-area: headers;
+#openModal {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 2em;
 }
 
 h1 {
-  padding: 1em 1em 0 1em;
-  font-family: monospace;
+  padding: 0 1em 0 1em;
   font-size: 3em;
-  color: #ff5000;
+  color: var(--main);
+  font-weight: bold;
+  text-shadow: var(--textShadow)
 }
 
 h2 {
   padding: 0 2em;
+  color: var(--text);
 }
 
-button {
+#napit {
+  padding: 0 1em 1em 3em;
+}
+
+.sort {
+  background-color: var(--main);
   border: none;
-  color: #ff5000;;
-  padding: 1em 2em;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 1em;
-  margin: 1em;
-  cursor: pointer;
-  border: 1px solid #ff5000;;
   border-radius: 5px;
+  color: var(--text);
+  font-weight: bold;
+  padding: 0.5em 1em;
+  text-align: center;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  box-shadow: var(--boxShadow);
+  font-family: 'Onest', sans-serif;
+  margin: 0.2em;
 }
 
-button:hover {
-  color: gray;
+.sort:hover {
+  background-color: var(--hover);
 }
 
-.main-content {
-  grid-area: rest;
-}
-
-dialog {
-  border: 1px solid #ccc;
+#myDialog {
+  border: 1px solid var(--border);
   border-radius: 5px;
   width: 60%;
   margin: auto;
   padding: 1em;
-  position: fixed;
-  bottom: 50%;
-  left: 50%;
-  transform: translate(-50%, 50%);
-  background-color: #fff;
+  background-color: var(--background);
   z-index: 1000;
 }
 
@@ -69,13 +88,9 @@ dialog::backdrop {
   backdrop-filter: blur(5px);
 }
 
-.highlight {
+.highlight, table tr:hover {
   font-weight: bold;
-  background-color: #ff5000;
-}
-
-table tr:hover {
-  background-color: #ff5000;
+  background-color: var(--main);
 }
 
 table {
@@ -83,67 +98,81 @@ table {
   padding: 1em;
   width: 100%;
   margin: auto;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
   border-collapse: separate;
 }
 
+#myDialog h3 {
+  color: var(--main);
+}
+
+#myDialog p {
+  color: var(--text);
+}
+
 th {
-  border-bottom: 1px solid #ccc;
+  border-bottom: 1px solid var(--border);
   font-weight: normal;
   padding: 0.5em 1em;
   text-align: left;
-  background-color: #ff5000;
-  color: #fff;
+  background-color: var(--main);
+  color: var(--text);
   text-transform: uppercase;
 }
 
 table tr {
-  transition: background-color #ff5000 0.3s;
+  transition: background-color var(--main) 0.3s;
 }
 
 td {
-  border-bottom: 1px solid #ccc;
+  border-bottom: 1px solid var(--border);
   padding: 0.5em 1em;
-  color: #333;
-  padding: 10px;
+  color: var(--text);
+  padding: 1em;
 }
-
 
 
 
 /* login */
-#registration-section {
-  background-color: #f5f5f5;
+#formDialog {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  width: 300px;
+  margin: auto;
   padding: 2em;
-  box-shadow: 0px 0px 15px rgba(0,0,0,0.2);
-  grid-area: login;
-  width: 23em;
-  height: 15em;
+  background-color: var(--background);
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+}
+
+.dialog-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#form input {
+  width: 100%;
+  padding: 1em;
+  margin: 1em 0;
+  border: 1px solid var(--border);
+  border-radius: 5px;
+}
+
+.btnTog {
+  display: flex;
+  justify-content: center;
+}
+
+#form button {
+  padding: 0.8em 1.3em;
+  background-color: var(--main);
+  color: var(--text);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
   margin: 1em;
 }
 
-#registration-section h2 {
-  margin-top: 0;
-}
-
-#registration-form input {
-  display: block;
-  width: 25em;
-  margin-bottom: 10px;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
-
-#registration-form button {
-  padding: 10px 20px;
-  background-color: #ff5000;
-  color: white;
-  border: none;
-  border-radius: 5px;
-}
-
-#registration-form button:hover {
-  background-color: #d56321;
+#form button:hover {
+  background-color: var(--hover);
 }
 

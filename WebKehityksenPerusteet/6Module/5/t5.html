@@ -5,45 +5,62 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>School restaurants</title>
   <link href="t5.css" rel="stylesheet">
+  <link href="darkTheme.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Chelsea+Market&family=Onest:wght@300&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/be13c93978.js" crossorigin="anonymous"></script>
   <script src="t5.js" type="module"></script>
+  <script src="darkTheme.js" defer></script>
+  <script src="login.js" defer></script>
 </head>
-
 <body>
-  <div class="wrapper">
-    <div class="headers">
-      <h1>Restaurants</h1>
-      <h2 id="welcome-msg"></h2>
-      <h2>Filter restaurants</h2>
-      <div id="napit">
-        <button id="sodexo">Sodexo</button>
-        <button id="compass">Compass Group</button>
-        <button id="reset">Show all</button>
-      </div>
+  <header>
+    <input type="checkbox" class="checkbox" id="checkbox">
+    <label for="checkbox" class="checkbox-label">
+      <i class="fa-solid fa-moon"></i>
+      <i class="fa-solid fa-sun"></i>
+      <span class="ball"></span>
+    </label>
+    <button id="openModal"><i class="fa-solid fa-user"></i></button>
+  </header>
+  <section>
+    <h1>Restaurants</h1>
+    <h2 id="welcome-msg"></h2>
+    <h2>Filter restaurants</h2>
+    <div id="napit">
+      <button id="reset" class="sort">Show all</button>
+      <button id="sodexo" class="sort">Sodexo</button>
+      <button id="compass" class="sort">Compass Group</button>
     </div>
-    <section id="registration-section">
+  </section>
+  <section class="main-content">
+    <table>
+      <tr>
+        <th>Name</th>
+        <th>Address</th>
+      </tr>
+      <!-- add restaurants here -->
+    </table>
+  </section>
+  <!-- login modal -->
+  <dialog id="formDialog">
+    <form id="form">
       <h2>Customer Registration</h2>
-      <form id="registration-form">
-        <input type="text" id="username" placeholder="Username" required>
-        <input type="email" id="email" placeholder="Email" required>
-        <input type="password" id="password" placeholder="Password" required>
+      <input type="text" id="user" placeholder="Username" required>
+      <input type="email" id="email" placeholder="Email" required>
+      <input type="password" id="password" placeholder="Password" required>
+      <div class="btnTog">
+        <button id="closeModal">Close</button>
         <button type="submit">Register</button>
-      </form>
-    </section>
-    <section class="main-content">
-      <table>
-        <tr>
-          <th>Name</th>
-          <th>Address</th>
-        </tr>
-        <!-- add restaurants here -->
-      </table>
-    </section>
-    <!-- modal -->
-    <dialog id="myDialog">
-      <div class="dialog-content">
-        <!-- add restaurant info here when restaurant is clicked -->
       </div>
-    </dialog>
-  </div>
+    </form>
+  </dialog>
+  <!-- modal -->
+  <dialog id="myDialog">
+    <div class="dialog-content">
+      <!-- add restaurant info here when restaurant is clicked -->
+    </div>
+  </dialog>
 </body>
 </html>
