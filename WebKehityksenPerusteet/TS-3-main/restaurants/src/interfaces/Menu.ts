@@ -1,5 +1,14 @@
+interface WeeklyMenu {
+    days: DayMenu[];
+}
+
+interface DayMenu {
+    date: string;
+    courses: Course[];
+}
+
 interface Menu {
-    courses: Course[],
+    courses: Course[];
 }
 
 interface Course {
@@ -8,4 +17,4 @@ interface Course {
     diets: string[];
 }
 
-export type {Menu}
+export type { Menu, WeeklyMenu, DayMenu, Course }

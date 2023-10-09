@@ -1,4 +1,4 @@
-import {Menu} from './interfaces/Menu';
+import {Menu, WeeklyMenu} from './interfaces/Menu';
 import {Restaurant} from './interfaces/Restaurant';
 
 const restaurantRow = (restaurant: Restaurant) => {
@@ -16,30 +16,51 @@ const restaurantRow = (restaurant: Restaurant) => {
   return tr;
 };
 
-const restaurantModal = (restaurant: Restaurant, menu: Menu) => {
-  const {name, address, city, postalCode, phone, company} = restaurant;
+const restaurantModal = (restaurant: Restaurant, menuData: Menu | WeeklyMenu, viewType: 'daily' | 'weekly') => {
+  const { name, address, city, postalCode, phone, company } = restaurant;
   let html = `<h3>${name}</h3>
     <p>${company}</p>
     <p>${address} ${postalCode} ${city}</p>
-    <p>${phone}</p>
+    <p>${phone}</p>`;
+
+  if (viewType === 'daily') {
+    const dailyMenu = menuData as Menu;
+    html += `
     <table>
       <tr>
         <th>Course</th>
         <th>Diet</th>
         <th>Price</th>
-      </tr>
-    `;
-  menu.courses.forEach((course) => {
-    const {name, diets, price} = course;
-    html += `
+      </tr>`;
+
+    dailyMenu.courses.forEach((course) => {
+      const { name, diets, price } = course;
+      html += `
+        <tr>
+          <td>${name}</td>
+          <td>${diets ?? ' - '}</td>
+          <td>${price ?? ' - '}</td>
+        </tr>`;
+    });
+
+    html += '</table>';
+  } else {
+    const weeklyMenu = menuData as WeeklyMenu;
+    weeklyMenu.days.forEach((day) => {
+      html += `<h4>${day.date}</h4><table><tr><th>Course</th><th>Diet</th><th>Price</th></tr>`;
+      day.courses.forEach((course) => {
+        const { name, diets, price } = course;
+        html += `
           <tr>
             <td>${name}</td>
             <td>${diets ?? ' - '}</td>
             <td>${price ?? ' - '}</td>
-          </tr>
-          `;
-  });
-  html += '</table>';
+          </tr>`;
+      });
+      html += '</table>';
+    });
+  }
+
   return html;
 };
 
