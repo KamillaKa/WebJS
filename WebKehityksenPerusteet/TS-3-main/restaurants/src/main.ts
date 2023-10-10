@@ -299,6 +299,7 @@ const success = async (pos: GeolocationPosition) => {
       return distanceA - distanceB;
     });
     createTable(restaurants);
+
     // buttons for filtering
     const sodexoBtn = document.querySelector('#sodexo');
     const compassBtn = document.querySelector('#compass');
@@ -323,6 +324,48 @@ const success = async (pos: GeolocationPosition) => {
       createTable(compassRestaurants);
     });
 
+    // Filtering cities
+    const helsinkiBtn = document.querySelector('#helsinki');
+    const espooBtn = document.querySelector('#espoo');
+    const vantaaBtn = document.querySelector('#vantaa');
+    const eiPkBtn = document.querySelector('#eiPk');
+
+    if (!helsinkiBtn || !espooBtn || !vantaaBtn) {
+      throw new Error('Button not found');
+    }
+
+    helsinkiBtn.addEventListener('click', () => {
+      const helsinkiRestaurants = restaurants.filter(
+        (restaurant) => restaurant.city === 'Helsinki'
+      );
+      console.log(helsinkiRestaurants);
+      createTable(helsinkiRestaurants);
+    });
+
+    espooBtn.addEventListener('click', () => {
+      const espooRestaurants = restaurants.filter(
+        (restaurant) => restaurant.city === 'Espoo'
+      );
+      console.log(espooRestaurants);
+      createTable(espooRestaurants);
+    });
+
+    vantaaBtn.addEventListener('click', () => {
+      const vantaaRestaurants = restaurants.filter(
+        (restaurant) => restaurant.city === 'Vantaa'
+      );
+      console.log(vantaaRestaurants);
+      createTable(vantaaRestaurants);
+    });
+
+    eiPkBtn?.addEventListener('click', () => {
+      const eiPkRestaurants = restaurants.filter(
+        (restaurant) => !['Helsinki', 'Espoo', 'Vantaa'].includes(restaurant.city)
+      );
+      console.log(eiPkRestaurants);
+      createTable(eiPkRestaurants);
+    });
+
     resetBtn.addEventListener('click', () => {
       createTable(restaurants);
     });
@@ -332,6 +375,7 @@ const success = async (pos: GeolocationPosition) => {
   }
 };
 
+// Dark theme
 const checkbox = document.getElementById("checkbox") as HTMLInputElement;
 checkbox.addEventListener("change", () => {
   document.body.classList.toggle("dark");
