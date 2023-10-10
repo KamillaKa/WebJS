@@ -1,0 +1,23 @@
+@font-face {
+  font-family: 'Oswald';
+  src: url('Oswald/Oswald-VariableFont_wght.ttf');
+}
+
+body {
+  font-family: Oswald, sans-serif;
+  background: url(cat.jpg) no-repeat center center fixed;
+  background-size: cover;
+}
+
+/* Make content area fill the entire browser window */
+html,
+.fullscreen {
+  display: block;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+
+
