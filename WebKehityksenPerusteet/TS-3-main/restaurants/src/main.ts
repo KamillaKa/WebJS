@@ -7,6 +7,7 @@ import {registerSW} from 'virtual:pwa-register';
 import {errorModal, restaurantModal, restaurantRow} from './components';
 import {Restaurant} from './interfaces/Restaurant';
 import {Menu, WeeklyMenu} from './interfaces/Menu';
+import './style.css';
 
 // PWA
 console.log(pwaInfo);
