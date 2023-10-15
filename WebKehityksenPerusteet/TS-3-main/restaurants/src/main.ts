@@ -11,6 +11,7 @@ import {Restaurant} from './interfaces/Restaurant';
 import {apiUrl, positionOptions} from './variables';
 import './style.css';
 import {Menu, WeeklyMenu} from './interfaces/Menu';
+import './style.css';
 
 // PWA
 // PWA code
