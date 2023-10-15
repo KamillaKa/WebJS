@@ -1,20 +1,15 @@
 import {pwaInfo} from 'virtual:pwa-info';
 import {fetchData} from './functions';
-import {UpdateResult} from './interfaces/UpdateResult';
 import {UploadResult} from './interfaces/UploadResult';
 import {LoginUser, User} from './interfaces/User';
-import {apiUrl, uploadUrl} from './variables';
 import {registerSW} from 'virtual:pwa-register';
 import {errorModal, restaurantModal, restaurantRow} from './components';
-import {fetchData} from './functions';
 import {Restaurant} from './interfaces/Restaurant';
-import {apiUrl, positionOptions} from './variables';
-import './style.css';
+import {apiUrl, uploadUrl, positionOptions} from './variables';
 import {Menu, WeeklyMenu} from './interfaces/Menu';
 import './style.css';
 
 // PWA
-// PWA code
 console.log(pwaInfo);
 
 const updateSW = registerSW({
