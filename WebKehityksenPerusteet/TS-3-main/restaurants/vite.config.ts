@@ -18,8 +18,8 @@ export default defineConfig({
       display: "standalone",
       scope: "./",
       start_url: "./index.html",
-      name: "School Restaurants",
-      short_name: "restaurants",
+      name: "vite-pwa-example",
+      short_name: "vite-pwa",
       icons: [
           {
               src: "./icons/icon-192x192.png",
