@@ -21,6 +21,7 @@ body {
   font-family: 'Onest', sans-serif;
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 header {
@@ -151,7 +152,7 @@ td {
 #formDialog {
   border: 1px solid var(--border);
   border-radius: 10px;
-  width: 300px;
+  width: 18em;
   margin: auto;
   padding: 2em;
   background-color: var(--background);
@@ -230,16 +231,23 @@ td {
 @media only screen and (max-width: 380px) {
   #myDialog {
     width: 100%;
-    padding: 0;
+    height: 90vh;
   }
 
   table {
-    padding: 0.2em;
+    padding: 0;
   }
 
   th {
-    font-weight: normal;
-    padding: 0.2em 0.7em;
+    width: 100%;
+  }
+
+  td {
+    padding: 0.5em;
+  }
+
+  dialog::backdrop {
+    backdrop-filter: blur(2px);
   }
 
 }
