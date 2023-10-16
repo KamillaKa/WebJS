@@ -54,10 +54,6 @@ h4 {
   color: var(--text);
 }
 
-#napit {
-  padding: 0 1em 1em 3em;
-}
-
 .sort {
   background-color: var(--main);
   border: none;
@@ -131,7 +127,6 @@ td {
   border-bottom: 1px solid var(--border);
   padding: 0.5em 1em;
   color: var(--text);
-  padding: 1em;
 }
 
 #myDialog button {
@@ -220,7 +215,6 @@ td {
 
 @media only screen and (max-width: 480px) {
   header {
-    flex-direction: column;
     align-items: flex-end;
   }
 
@@ -234,11 +228,18 @@ td {
 }
 
 @media only screen and (max-width: 380px) {
-  body, div, header, footer {
-    /* small phone styles */
+  #myDialog {
     width: 100%;
-    font-size: 1em;
-    margin: 0;
     padding: 0;
   }
+
+  table {
+    padding: 0.2em;
+  }
+
+  th {
+    font-weight: normal;
+    padding: 0.2em 0.7em;
+  }
+
 }
